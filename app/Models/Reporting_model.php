@@ -6,7 +6,7 @@ use CodeIgniter\Model;
 
 class Reporting_model extends Model {
   protected $table = "report";
-  protected $allowedFields = ['campaign_id', 'creative_id', 'creative_name', 'creative_size', 'inventory_id', 'inventory_name', 'exchange_name', 'impression', 'click', 'win_rate', 'ctr', 'time'];
+  protected $allowedFields = ['email', 'campaign_id', 'creative_id', 'creative_name', 'creative_size', 'inventory_id', 'inventory_name', 'exchange_name', 'impression', 'click', 'win_rate', 'ctr', 'time'];
 
   public function getInventoryName($id)
   {
