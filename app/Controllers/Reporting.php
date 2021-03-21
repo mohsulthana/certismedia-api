@@ -47,10 +47,14 @@ class Reporting extends ResourceController
       $email = $user['email'];
       $pass  = $user['password'];
       $response = $client->request('GET', $url, [
-        'auth' => [$email, $pass]
+        'auth' => [$email, $pass, 'basic'],
+        'headers' => [
+          'Accept'     => 'application/json',
+        ]
       ]);
       $report = [];
       $data = $response->getBody();
+      
       foreach ($data as $key => $value) {
         $ctr = 0;
         if ($value->clicks > 0 && $value->impressions > 0) {
