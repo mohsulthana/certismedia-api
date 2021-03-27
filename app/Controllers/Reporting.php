@@ -50,11 +50,12 @@ class Reporting extends ResourceController
         'auth' => [$email, $pass, 'basic'],
         'headers' => [
           'Accept'     => 'application/json',
-        ]
+        ],
+        'connect_timeout' => 0
       ]);
       $report = [];
-      $data = $response->getBody();
-
+      $data = json_decode($response->getBody());
+      
       foreach ($data as $key => $value) {
         $ctr = 0;
         if ($value->clicks > 0 && $value->impressions > 0) {
@@ -75,9 +76,9 @@ class Reporting extends ResourceController
           'win_rate'  => $value->winrate,
           'ctr' => $ctr,
           'time'  => $value->time
-        ];
+        ];        
         array_push($report, $tmp);
-      }
+      }      
       $reportingModel->insertBatch($report);
     }
     return 'success';
