@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Models\Dashboard_model;
 use CodeIgniter\RESTful\ResourceController;
+use App\Models\User_model;
 
 header('Access-Control-Allow-Origin: *');
 header("Access-Control-Allow-Methods: GET, OPTIONS, UPDATE, PUT");
@@ -20,47 +21,45 @@ class Dashboard extends ResourceController
 
   public function fetchFromAPI()
   {
+    $client = \Config\Services::curlrequest();
     $dashboardModel = new Dashboard_model();
-    $days   = date('Y-m-d', strtotime("-7 day"));
-    $ch = curl_init();
+    $usersModel = new User_model();
+    $users = $usersModel->findAll();
+    $day  = date('Y-m-d', strtotime("-7 day"));
+    $url = "https://reporting.smadex.com/api/v2/performance?dimensions=campaign_name,campaign_id&metrics=impressions,clicks,winrate&startdate=$day&granularity=hour";
 
-    curl_setopt($ch, CURLOPT_URL, "https://reporting.smadex.com/api/v2/performance?dimensions=campaign_name,campaign_id&metrics=impressions,clicks,winrate&startdate=$days&granularity=hour");
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
+    foreach($users as $user) {
+      $email = $user['email'];
+      $pass  = $user['password'];
+      $response = $client->request('GET', $url, [
+        'auth' => [$email, $pass, 'basic'],
+        'headers' => [
+          'Accept'     => 'application/json',
+        ]
+      ]);
+      $dashboard = [];
+      $data = $response->getBody();
 
-    $headers = array();
-    $headers[] = 'Authorization: Basic Y20xMDU2QGNlcnRpc21lZGlhLmNvbTpoSm00NT9kRmU=';
-    $headers[] = 'Content-Type: application/json';
-    curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+      foreach ($data as $key => $value) {
+        $ctr = 0;
+        if ($value->clicks > 0 && $value->impressions > 0) {
+          $ctr = $value->clicks / $value->impressions;
+        }
 
-    $result = curl_exec($ch);
-    if (curl_errno($ch)) {
-      echo 'Error:' . curl_error($ch);
-    }
-    $data = json_decode($result);
-
-    $dashboard = [];
-
-
-    foreach ($data as $key => $value) {
-      $ctr = 0;
-      if ($value->clicks > 0 && $value->impressions > 0) {
-        $ctr = $value->clicks / $value->impressions;
+        $tmp = [
+          'email' => $email,
+          'campaign_id' => $value->campaign_id,
+          'campaign_name' => $value->campaign_name,
+          'impression' => $value->impressions,
+          'click' => $value->clicks,
+          'ctr' => $ctr,
+          'win_rate' => $value->winrate,
+          'time' => $value->time,
+        ];
+        array_push($dashboard, $tmp);
       }
-
-      $dashboard = [
-        'campaign_id' => $value->campaign_id,
-        'campaign_name' => $value->campaign_name,
-        'impression' => $value->impressions,
-        'click' => $value->clicks,
-        'ctr' => $ctr,
-        'win_rate' => $value->winrate,
-        'time' => $value->time,
-      ];
-      $dashboardModel->insert($dashboard);
+      $dashboardModel->insertBatch($dashboard);
     }
-
-    curl_close($ch);
-    return $result;
+    return 'success';
   }
 }

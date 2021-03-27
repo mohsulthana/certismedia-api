@@ -41,6 +41,7 @@ $routes->get('/report/first_quartile', 'Report::first_quartile');
 $routes->get('/report/mid_point', 'Report::mid_point');
 $routes->get('/report/third_quartile', 'Report::third_quartile');
 $routes->get('/report/completed', 'Report::completed');
+$routes->post('/login', 'Authentication::login');
 
 $routes->resource('impression');
 $routes->resource('click');

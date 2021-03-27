@@ -39,11 +39,11 @@ class Reporting extends ResourceController
     $client = \Config\Services::curlrequest();
     $usersModel = new User_model();
     $reportingModel = new Reporting_model();
-    $users = $usersModel->findAll();    
-    $day  = date('Y-m-d', strtotime("-7 day"));        
-    $url = 'https://reporting.smadex.com/api/v2/performance?dimensions=campaign_id,creative_id,creative_name,creative_size,inventory_id,inventory_name,exchange_name&metrics=impressions,clicks,winrate&startdate='.$day.'&granularity=day';
-    
-    foreach($users as $user) {
+    $users = $usersModel->findAll();
+    $day  = date('Y-m-d', strtotime("-7 day"));
+    $url = "https://reporting.smadex.com/api/v2/performance?dimensions=campaign_id,creative_id,creative_name,creative_size,inventory_id,inventory_name,exchange_name&metrics=impressions,clicks,winrate&startdate=$day&granularity=day";
+
+    foreach ($users as $user) {
       $email = $user['email'];
       $pass  = $user['password'];
       $response = $client->request('GET', $url, [
@@ -54,7 +54,7 @@ class Reporting extends ResourceController
       ]);
       $report = [];
       $data = $response->getBody();
-      
+
       foreach ($data as $key => $value) {
         $ctr = 0;
         if ($value->clicks > 0 && $value->impressions > 0) {
