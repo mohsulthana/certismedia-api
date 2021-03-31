@@ -16,6 +16,7 @@ class Dashboard extends ResourceController
 
   public function index()
   {
+    $email = $this->request->getJSON('email');
     return  $this->setResponseFormat('json')->respond($this->model->findAll(), 200);
   }
 
@@ -25,8 +26,8 @@ class Dashboard extends ResourceController
     $dashboardModel = new Dashboard_model();
     $usersModel = new User_model();
     $users = $usersModel->findAll();
-    $day  = date('Y-m-d', strtotime("-7 day"));
-    $url = "https://reporting.smadex.com/api/v2/performance?dimensions=campaign_name,campaign_id&metrics=impressions,clicks,winrate&startdate=$day&granularity=hour";
+    $day  = date('Y-m-d', strtotime("-7 days"));
+    $url = "https://reporting.smadex.com/api/v2/performance?dimensions=campaign_name,campaign_id&metrics=impressions,clicks,winrate,views,completed_views&startdate=$day&granularity=hour";
 
     foreach($users as $user) {
       $email = $user['email'];
@@ -38,7 +39,7 @@ class Dashboard extends ResourceController
         ]
       ]);
       $dashboard = [];
-      $data = $response->getBody();
+      $data = json_decode($response->getBody());
 
       foreach ($data as $key => $value) {
         $ctr = 0;
@@ -53,6 +54,8 @@ class Dashboard extends ResourceController
           'impression' => $value->impressions,
           'click' => $value->clicks,
           'ctr' => $ctr,
+          'view'  => $value->views,
+          'completed_view'  => $value->completed_views,
           'win_rate' => $value->winrate,
           'time' => $value->time,
         ];

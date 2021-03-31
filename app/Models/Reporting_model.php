@@ -6,35 +6,35 @@ use CodeIgniter\Model;
 
 class Reporting_model extends Model {
   protected $table = "report";
-  protected $allowedFields = ['email', 'campaign_id', 'creative_id', 'creative_name', 'creative_size', 'inventory_id', 'inventory_name', 'exchange_name', 'impression', 'click', 'win_rate', 'ctr', 'time'];
+  protected $allowedFields = ['email', 'campaign_id', 'creative_id', 'creative_name', 'creative_size', 'inventory_id', 'inventory_name', 'exchange_name', 'impression', 'view', 'completed_view', 'click', 'win_rate', 'ctr', 'time'];
 
-  public function getInventoryName($id)
+  public function getInventoryName($campaign)
   {
-    $result = $this->db->query("SELECT inventory_name, impression, click, ctr, win_rate, a.campaign_name from report natural join (select DISTINCT campaign_id, campaign_name from dashboard) a where a.campaign_id=$id")->getResultArray();
+    $result = $this->db->query("SELECT inventory_name, impression, click, ctr, win_rate, view, completed_view, a.campaign_name from report natural join (select DISTINCT campaign_id, campaign_name from dashboard) a where a.campaign_id=$campaign")->getResultArray();
     return $result;
   }
 
-  public function getCreativeName($id)
+  public function getCreativeName($campaign)
   {
-    $result = $this->db->query("SELECT report.*, a.campaign_name from report natural join (select DISTINCT campaign_id, campaign_name from dashboard) a where a.campaign_id=$id")->getResultArray();
+    $result = $this->db->query("SELECT report.*, a.campaign_name from report natural join (select DISTINCT campaign_id, campaign_name from dashboard) a where a.campaign_id=$campaign")->getResultArray();
     return $result;
   }
 
-  public function getCampaignInformation($id)
+  public function getCampaignInformation($campaign)
   {
-    $result = $this->db->query("SELECT * from dashboard where campaign_id=$id")->getResultArray();
+    $result = $this->db->query("SELECT * from dashboard where campaign_id=$campaign")->getResultArray();
     return $result;
   }
 
-  public function getExchangeName($id)
+  public function getExchangeName($campaign)
   {
-    $result = $this->db->query("SELECT exchange_name, COUNT(impression) as total FROM `report` where campaign_id=$id GROUP BY exchange_name")->getResultArray();
+    $result = $this->db->query("SELECT exchange_name, COUNT(impression) as total FROM `report` where campaign_id=$campaign GROUP BY exchange_name")->getResultArray();
     return $result;
   }
 
-  public function getAdSize($id)
+  public function getAdSize($campaign)
   {
-    $result = $this->db->query("SELECT creative_size, COUNT(impression) as total FROM `report` where campaign_id=$id GROUP BY creative_size")->getResultArray();
+    $result = $this->db->query("SELECT creative_size, COUNT(impression) as total FROM `report` where campaign_id=$campaign GROUP BY creative_size")->getResultArray();
     return $result;
   }
 }

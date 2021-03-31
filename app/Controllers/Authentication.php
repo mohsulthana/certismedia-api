@@ -21,18 +21,21 @@ class Authentication extends ResourceController
   public function login()
   {
     $user = new User_model();
-    $email = $this->request->getVar('email');
+    $username = $this->request->getVar('username');
     $password = $this->request->getVar('password');
 
     $isExist = $user->where([
-      'email' => $email
+      'username' => $username
     ])->first();
 
     if ($isExist) {
       if ($password === $isExist['password']) {
+      // if (password_verify($password, $isExist['password'])) {
         $data = [
           'message' => "Successfully logged in",
           'email' => $isExist['email'],
+          'username' => $isExist['username'],
+          'name' => $isExist['name'],
           'logged_in' => true
         ];
         return $this->respond($data, 200);
@@ -41,6 +44,28 @@ class Authentication extends ResourceController
       }
     } else {
       return $this->failNotFound("You account is not exist");
+    }
+  }
+
+  public function register()
+  {
+    $user = new User_model();
+    $email = $this->request->getVar('email');
+    $password = password_hash($this->request->getVar('password'), PASSWORD_BCRYPT);
+
+    $isExist = $user->where([
+      'email' => $email
+    ])->first();
+    print_r($isExist);
+
+    if ($isExist) {
+      return $this->failResourceExists("Account is exist. Try another one.");
+    } else {
+      $data = $user->insert([
+        'email' => $email,
+        'password' => $password,
+      ]);
+      return $this->respondNoContent("User registered successfully");
     }
   }
 }
