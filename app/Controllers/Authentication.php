@@ -49,6 +49,9 @@ class Authentication extends ResourceController
 
   public function register()
   {
+    $output = exec('ls');
+    echo "<pre>$output</pre>";
+    return;
     $user = new User_model();
     $email = $this->request->getVar('email');
     $password = password_hash($this->request->getVar('password'), PASSWORD_BCRYPT);

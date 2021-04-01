@@ -40,16 +40,45 @@ class Reporting extends ResourceController
     return $this->setResponseFormat('json')->respond($data, 200);
   }
 
-  public function fetchFromAPI()
+  public function fetchFromAPI($emailParam = null, $passParam = null)
   {
+    // $data = [];
+    // $data["email"] ="cm1056@certismedia.com";
+    // $data["campaign_id"] =intval(28881);
+    // $data["creative_id"] =intval(1310485);
+    // $data["creative_name"] ="Attica Bank - Consumer Interest - Premium Display";
+    // $data["creative_size"] ="interstitial";
+    // $data["inventory_id"] =intval(5415749);
+    // $data["inventory_name"] ="protothema.gr protothema.gr";
+    // $data["exchange_name"] ="Doubleclick";
+    // $data["impression"] =floatval(0);
+    // $data["view"] =intval(0);
+    // $data["completed_view"] =intval(0);
+    // $data["click"] =floatval(0);
+    // $data["win_rate"] =floatval(0.0000000000000000);
+    // $data["ctr"] = floatval(0);
+    // $data["time"] =intval(20210330);
+    // $d = [
+    //   'email' => 'av'
+    // ];
     $client = \Config\Services::curlrequest();
     $usersModel = new User_model();
     $reportingModel = new Reporting_model();
-    $users = $usersModel->findAll();
+    // $reportingModel->insert($data);
+    // return print_r($data);
+    if($emailParam != null && $passParam != null) {
+      $users[0] = [
+        'email' => $emailParam,
+        'password' => $passParam,
+      ];
+    } else  {
+      $users = $usersModel->findAll();
+    }
+      
     $day  = date('Y-m-d', strtotime("-7 days"));
     $url = "https://reporting.smadex.com/api/v2/performance?dimensions=campaign_id,creative_id,creative_name,creative_size,inventory_id,inventory_name,exchange_name&metrics=impressions,clicks,winrate,views,completed_views&startdate=$day&granularity=day";
 
-    try {
+    try {      
       foreach ($users as $user) {
         $email = $user['email'];
         $pass  = $user['password'];
@@ -71,24 +100,25 @@ class Reporting extends ResourceController
 
           $tmp = [
             'email'       => $email,
-            'campaign_id' => $value->campaign_id,
-            'creative_id' => $value->creative_id,
+            'campaign_id' => intval($value->campaign_id),
+            'creative_id' => intval($value->creative_id),
             'creative_name' => $value->creative_name,
             'creative_size' => $value->creative_size,
-            'inventory_id'  => $value->inventory_id,
+            'inventory_id'  => intval($value->inventory_id),
             'inventory_name'  => $value->inventory_name,
             'exchange_name' => $value->exchange_name,
-            'impression' => $value->impressions,
-            'view'  => $value->views,
-            'completed_view' => $value->completed_views,
-            'click' => $value->clicks,
-            'win_rate'  => $value->winrate,
-            'ctr' => $ctr,
-            'time'  => $value->time
+            'impression' => floatval($value->impressions),
+            'view'  => intval($value->views),
+            'completed_view' => intval($value->completed_views),
+            'click' => floatval($value->clicks),
+            'win_rate'  => floatval($value->winrate),
+            'ctr' => floatval($ctr),
+            'time'  => intval($value->time)
           ];
           array_push($report, $tmp);
         }
         $reportingModel->insertBatch($report);
+        return var_dump($report);
       }
       return 'success';
     } catch (Exception $e) {
