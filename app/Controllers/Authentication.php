@@ -51,17 +51,20 @@ class Authentication extends ResourceController
   {
     $user = new User_model();
     $email = $this->request->getVar('email');
+    $username = $this->request->getVar('username');
+    $name = $this->request->getVar('name');
     $password = password_hash($this->request->getVar('password'), PASSWORD_BCRYPT);
 
     $isExist = $user->where([
       'email' => $email
     ])->first();
-    print_r($isExist);
 
     if ($isExist) {
       return $this->failResourceExists("Account is exist. Try another one.");
     } else {
       $data = $user->insert([
+        'username'  => $username,
+        'name'  => $name,
         'email' => $email,
         'password' => $password,
       ]);
