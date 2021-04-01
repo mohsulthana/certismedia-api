@@ -105,12 +105,21 @@ class Reporting extends ResourceController
     }
   }
 
-  public function fetchDailyDelivery()
+  public function fetchDailyDelivery($emailParam = null, $passParam = null)
   {
     $client = \Config\Services::curlrequest();
     $usersModel = new User_model();
     $dailyDeliveryModel = new Daily_delivery();
-    $users = $usersModel->findAll();
+    
+    if($emailParam != null && $passParam != null) {
+      $users[0] = [
+        'email' => $emailParam,
+        'password' => $passParam,
+      ];
+    } else  {
+      $users = $usersModel->findAll();
+    }
+    
     $day  = date('Y-m-d', strtotime("-7 days"));
     $url = "https://reporting.smadex.com/api/v2/performance?dimensions=campaign_id&metrics=impressions,clicks,winrate,views,completed_views&startdate=$day&granularity=day";
 
