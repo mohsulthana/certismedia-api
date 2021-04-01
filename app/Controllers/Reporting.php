@@ -42,30 +42,10 @@ class Reporting extends ResourceController
 
   public function fetchFromAPI($emailParam = null, $passParam = null)
   {
-    // $data = [];
-    // $data["email"] ="cm1056@certismedia.com";
-    // $data["campaign_id"] =intval(28881);
-    // $data["creative_id"] =intval(1310485);
-    // $data["creative_name"] ="Attica Bank - Consumer Interest - Premium Display";
-    // $data["creative_size"] ="interstitial";
-    // $data["inventory_id"] =intval(5415749);
-    // $data["inventory_name"] ="protothema.gr protothema.gr";
-    // $data["exchange_name"] ="Doubleclick";
-    // $data["impression"] =floatval(0);
-    // $data["view"] =intval(0);
-    // $data["completed_view"] =intval(0);
-    // $data["click"] =floatval(0);
-    // $data["win_rate"] =floatval(0.0000000000000000);
-    // $data["ctr"] = floatval(0);
-    // $data["time"] =intval(20210330);
-    // $d = [
-    //   'email' => 'av'
-    // ];
     $client = \Config\Services::curlrequest();
     $usersModel = new User_model();
     $reportingModel = new Reporting_model();
-    // $reportingModel->insert($data);
-    // return print_r($data);
+    
     if($emailParam != null && $passParam != null) {
       $users[0] = [
         'email' => $emailParam,
@@ -118,7 +98,6 @@ class Reporting extends ResourceController
           array_push($report, $tmp);
         }
         $reportingModel->insertBatch($report);
-        return var_dump($report);
       }
       return 'success';
     } catch (Exception $e) {
