@@ -40,16 +40,25 @@ class Reporting extends ResourceController
     return $this->setResponseFormat('json')->respond($data, 200);
   }
 
-  public function fetchFromAPI()
+  public function fetchFromAPI($emailParam = null, $passParam = null)
   {
     $client = \Config\Services::curlrequest();
     $usersModel = new User_model();
     $reportingModel = new Reporting_model();
-    $users = $usersModel->findAll();
+    
+    if($emailParam != null && $passParam != null) {
+      $users[0] = [
+        'email' => $emailParam,
+        'password' => $passParam,
+      ];
+    } else  {
+      $users = $usersModel->findAll();
+    }
+      
     $day  = date('Y-m-d', strtotime("-7 days"));
     $url = "https://reporting.smadex.com/api/v2/performance?dimensions=campaign_id,creative_id,creative_name,creative_size,inventory_id,inventory_name,exchange_name&metrics=impressions,clicks,winrate,views,completed_views&startdate=$day&granularity=day";
 
-    try {
+    try {      
       foreach ($users as $user) {
         $email = $user['email'];
         $pass  = $user['password'];
@@ -71,20 +80,20 @@ class Reporting extends ResourceController
 
           $tmp = [
             'email'       => $email,
-            'campaign_id' => $value->campaign_id,
-            'creative_id' => $value->creative_id,
+            'campaign_id' => intval($value->campaign_id),
+            'creative_id' => intval($value->creative_id),
             'creative_name' => $value->creative_name,
             'creative_size' => $value->creative_size,
-            'inventory_id'  => $value->inventory_id,
+            'inventory_id'  => intval($value->inventory_id),
             'inventory_name'  => $value->inventory_name,
             'exchange_name' => $value->exchange_name,
-            'impression' => $value->impressions,
-            'view'  => $value->views,
-            'completed_view' => $value->completed_views,
-            'click' => $value->clicks,
-            'win_rate'  => $value->winrate,
-            'ctr' => $ctr,
-            'time'  => $value->time
+            'impression' => floatval($value->impressions),
+            'view'  => intval($value->views),
+            'completed_view' => intval($value->completed_views),
+            'click' => floatval($value->clicks),
+            'win_rate'  => floatval($value->winrate),
+            'ctr' => floatval($ctr),
+            'time'  => intval($value->time)
           ];
           array_push($report, $tmp);
         }
@@ -96,12 +105,21 @@ class Reporting extends ResourceController
     }
   }
 
-  public function fetchDailyDelivery()
+  public function fetchDailyDelivery($emailParam = null, $passParam = null)
   {
     $client = \Config\Services::curlrequest();
     $usersModel = new User_model();
     $dailyDeliveryModel = new Daily_delivery();
-    $users = $usersModel->findAll();
+    
+    if($emailParam != null && $passParam != null) {
+      $users[0] = [
+        'email' => $emailParam,
+        'password' => $passParam,
+      ];
+    } else  {
+      $users = $usersModel->findAll();
+    }
+    
     $day  = date('Y-m-d', strtotime("-7 days"));
     $url = "https://reporting.smadex.com/api/v2/performance?dimensions=campaign_id&metrics=impressions,clicks,winrate,views,completed_views&startdate=$day&granularity=day";
 
