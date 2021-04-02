@@ -40,17 +40,17 @@ class Reporting extends ResourceController
     return $this->setResponseFormat('json')->respond($data, 200);
   }
 
-  public function fetchFromAPI($emailParam = null, $passParam = null)
+  public function fetchFromAPI($id_user = null)
   {
     $client = \Config\Services::curlrequest();
     $usersModel = new User_model();
     $reportingModel = new Reporting_model();
     
-    if($emailParam != null && $passParam != null) {
-      $users[0] = [
-        'email' => $emailParam,
-        'API' => base64_encode($emailParam.':'.$passParam),
-      ];
+    if($id_user != null) {
+      $users[0] = $usersModel->find($id_user);
+      if($users[0] == null) {
+        return $this->failResourceExists("Invalid Account");
+      }
     } else  {
       $users = $usersModel->findAll();
     }
@@ -60,9 +60,6 @@ class Reporting extends ResourceController
 
     try {      
       foreach ($users as $user) {
-        if($user['status'] == 0) {
-          $usersModel->set(['status' => 3])->where('email', $user['email'])->update();
-        }
         $response = $client->request('GET', $url, [
           'headers' => [
             'Accept'     => 'application/json',
@@ -99,6 +96,9 @@ class Reporting extends ResourceController
           array_push($report, $tmp);
         }
         $reportingModel->insertBatch($report);
+        if($user['statusReporting'] != 1) {
+          $usersModel->set(['statusReporting' => 1])->where('email', $user['email'])->update();
+        }
       }
       return 'success';
     } catch (Exception $e) {

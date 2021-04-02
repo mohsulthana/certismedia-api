@@ -20,16 +20,16 @@ class Dashboard extends ResourceController
     return  $this->setResponseFormat('json')->respond($this->model->findAll(), 200);
   }
 
-  public function fetchFromAPI($emailParam = null, $passParam = null)
+  public function fetchFromAPI($id_user = null)
   {
     $client = \Config\Services::curlrequest();
     $dashboardModel = new Dashboard_model();
     $usersModel = new User_model();
-    if($emailParam != null && $passParam != null) {
-      $users[0] = [
-        'email' => $emailParam,
-        'API' => base64_encode($emailParam.':'.$passParam),
-      ];
+    if($id_user != null) {
+      $users[0] = $usersModel->find($id_user);
+      if($users[0] == null) {
+        return $this->failResourceExists("Invalid Account");
+      }
     } else  {
       $users = $usersModel->findAll();
     }
@@ -68,8 +68,8 @@ class Dashboard extends ResourceController
         array_push($dashboard, $tmp);
       }
       $dashboardModel->insertBatch($dashboard);
-      if($user['status'] != 1) {
-        $usersModel->set(['status' => 1])->where('email', $user['email'])->update();
+      if($user['statusDashboard'] != 1) {
+        $usersModel->set(['statusDashboard' => 1])->where('email', $user['email'])->update();
       }
     }
     return 'success';
