@@ -28,7 +28,7 @@ class Dashboard extends ResourceController
     if($emailParam != null && $passParam != null) {
       $users[0] = [
         'email' => $emailParam,
-        'password' => $passParam,
+        'API' => base64_encode($emailParam.':'.$passParam),
       ];
     } else  {
       $users = $usersModel->findAll();
@@ -37,17 +37,16 @@ class Dashboard extends ResourceController
     $url = "https://reporting.smadex.com/api/v2/performance?dimensions=campaign_name,campaign_id&metrics=impressions,clicks,winrate,views,completed_views&startdate=$day&granularity=hour";
 
     foreach($users as $user) {
-      $email = $user['email'];
-      $pass  = $user['password'];
       $response = $client->request('GET', $url, [
-        'auth' => [$email, $pass, 'basic'],
         'headers' => [
           'Accept'     => 'application/json',
-        ]
+          'Authorization' => 'Basic '.$user['API']
+        ],
+        'connect_timeout' => 0
       ]);
       $dashboard = [];
       $data = json_decode($response->getBody());
-
+      
       foreach ($data as $key => $value) {
         $ctr = 0;
         if ($value->clicks > 0 && $value->impressions > 0) {
@@ -55,7 +54,7 @@ class Dashboard extends ResourceController
         }
 
         $tmp = [
-          'email' => $email,
+          'email' => $user['email'],
           'campaign_id' => $value->campaign_id,
           'campaign_name' => $value->campaign_name,
           'impression' => $value->impressions,
@@ -69,6 +68,9 @@ class Dashboard extends ResourceController
         array_push($dashboard, $tmp);
       }
       $dashboardModel->insertBatch($dashboard);
+      if($user['status'] != 1) {
+        $usersModel->set(['status' => 1])->where('email', $user['email'])->update();
+      }
     }
     return 'success';
   }

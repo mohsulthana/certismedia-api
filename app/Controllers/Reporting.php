@@ -49,7 +49,7 @@ class Reporting extends ResourceController
     if($emailParam != null && $passParam != null) {
       $users[0] = [
         'email' => $emailParam,
-        'password' => $passParam,
+        'API' => base64_encode($emailParam.':'.$passParam),
       ];
     } else  {
       $users = $usersModel->findAll();
@@ -60,12 +60,13 @@ class Reporting extends ResourceController
 
     try {      
       foreach ($users as $user) {
-        $email = $user['email'];
-        $pass  = $user['password'];
+        if($user['status'] == 0) {
+          $usersModel->set(['status' => 3])->where('email', $user['email'])->update();
+        }
         $response = $client->request('GET', $url, [
-          'auth' => [$email, $pass, 'basic'],
           'headers' => [
             'Accept'     => 'application/json',
+            'Authorization' => 'Basic '.$user['API']
           ],
           'connect_timeout' => 0
         ]);
@@ -79,7 +80,7 @@ class Reporting extends ResourceController
           }
 
           $tmp = [
-            'email'       => $email,
+            'email'       => $user['email'],
             'campaign_id' => intval($value->campaign_id),
             'creative_id' => intval($value->creative_id),
             'creative_name' => $value->creative_name,
@@ -114,7 +115,7 @@ class Reporting extends ResourceController
     if($emailParam != null && $passParam != null) {
       $users[0] = [
         'email' => $emailParam,
-        'password' => $passParam,
+        'API' => base64_encode($emailParam.':'.$passParam),
       ];
     } else  {
       $users = $usersModel->findAll();
@@ -125,12 +126,10 @@ class Reporting extends ResourceController
 
     try {
       foreach ($users as $user) {
-        $email = $user['email'];
-        $pass  = $user['password'];
         $response = $client->request('GET', $url, [
-          'auth' => [$email, $pass, 'basic'],
           'headers' => [
             'Accept'     => 'application/json',
+            'Authorization' => 'Basic '.$user['API']
           ],
           'connect_timeout' => 0
         ]);

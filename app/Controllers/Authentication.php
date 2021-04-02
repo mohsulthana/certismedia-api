@@ -48,29 +48,35 @@ class Authentication extends ResourceController
   }
 
   public function register()
-  {
-    $output = exec('ls');
-    echo "<pre>$output</pre>";
-    return;
+  {    
+    
     $user = new User_model();
     $email = $this->request->getVar('email');
     $username = $this->request->getVar('username');
     $name = $this->request->getVar('name');
+    $phone = $this->request->getVar('phone');
+    $plain_password = $this->request->getVar('password');
     $password = password_hash($this->request->getVar('password'), PASSWORD_BCRYPT);
-
     $isExist = $user->where([
       'email' => $email
     ])->first();
-
+      
     if ($isExist) {
       return $this->failResourceExists("Account is exist. Try another one.");
     } else {
-      $data = $user->insert([
+      $data = [
         'username'  => $username,
         'name'  => $name,
         'email' => $email,
         'password' => $password,
-      ]);
+        'API' => base64_encode($email.':'.$plain_password),
+        'phone' => $phone,
+        'status' => 0
+      ];
+      $user->insert($data);      
+      shell_exec('/usr/local/bin/php /home4/fykfaumy/public_html/api/public/index.php Reporting FetchFromAPI "'.$email.'" "'.$plain_password.'"');
+      shell_exec('/usr/local/bin/php /home4/fykfaumy/public_html/api/public/index.php Reporting fetchDailyDelivery "'.$email.'" "'.$plain_password.'"');
+      shell_exec('/usr/local/bin/php /home4/fykfaumy/public_html/api/public/index.php Dashboard FetchFromAPI "'.$email.'" "'.$plain_password.'"');
       return $this->respondNoContent("User registered successfully");
     }
   }
