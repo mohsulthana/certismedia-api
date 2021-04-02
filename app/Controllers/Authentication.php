@@ -29,13 +29,14 @@ class Authentication extends ResourceController
     ])->first();
 
     if ($isExist) {
-      if ($password === $isExist['password']) {
-      // if (password_verify($password, $isExist['password'])) {
+      if (password_verify($password, $isExist['password'])) {
         $data = [
           'message' => "Successfully logged in",
           'email' => $isExist['email'],
           'username' => $isExist['username'],
           'name' => $isExist['name'],
+          'status'  => $isExist['status'],
+          'state' => "success",
           'logged_in' => true
         ];
         return $this->respond($data, 200);
@@ -43,13 +44,13 @@ class Authentication extends ResourceController
         return $this->failUnauthorized("Your password is incorrect");
       }
     } else {
-      return $this->failNotFound("You account is not exist");
+      return $this->failNotFound("Your account is not exist");
     }
   }
 
   public function register()
-  {    
-    
+  {
+
     $user = new User_model();
     $email = $this->request->getVar('email');
     $username = $this->request->getVar('username');
@@ -57,12 +58,13 @@ class Authentication extends ResourceController
     $phone = $this->request->getVar('phone');
     $plain_password = $this->request->getVar('password');
     $password = password_hash($this->request->getVar('password'), PASSWORD_BCRYPT);
+
     $isExist = $user->where([
       'email' => $email
     ])->first();
-      
+
     if ($isExist) {
-      return $this->failResourceExists("Account is exist. Try another one.");
+      return $this->failResourceExists("Account is invalid or already exist. Try another one.");
     } else {
       $data = [
         'username'  => $username,
@@ -73,11 +75,11 @@ class Authentication extends ResourceController
         'phone' => $phone,
         'status' => 0
       ];
-      $user->insert($data);      
+      $user->insert($data);
       shell_exec('/usr/local/bin/php /home4/fykfaumy/public_html/api/public/index.php Reporting FetchFromAPI "'.$email.'" "'.$plain_password.'"');
       shell_exec('/usr/local/bin/php /home4/fykfaumy/public_html/api/public/index.php Reporting fetchDailyDelivery "'.$email.'" "'.$plain_password.'"');
       shell_exec('/usr/local/bin/php /home4/fykfaumy/public_html/api/public/index.php Dashboard FetchFromAPI "'.$email.'" "'.$plain_password.'"');
-      return $this->respondNoContent("User registered successfully");
+      return $this->respondCreated("User registered successfully. Please wait for 10 minutes to login.");
     }
   }
 }
