@@ -26,17 +26,17 @@ class Reporting extends ResourceController
 
   public function getCampaignInformation($campaign, $id)
   {
+    $email = $this->request->getGet('email');
     $reportModel = new Reporting_model();
     $dashboardModel = new Dashboard_model();
     $dailyDeliveryModel = new Daily_delivery();
-    $inventory = $reportModel->getInventoryName($campaign);
-    $creative = $reportModel->getCreativeName($campaign);
-    $campaignInfo = $reportModel->getCampaignInformation($campaign);
-    $exchange = $reportModel->getExchangeName($campaign);
+    $inventory = $reportModel->getInventoryName($campaign, $email);
+    $creative = $reportModel->getCreativeName($campaign, $email);
+    $campaignInfo = $reportModel->getCampaignInformation($campaign, $email);
+    $exchange = $reportModel->getExchangeName($campaign, $email);
     $adSize = $reportModel->getAdSize($campaign);
-    $detail = $dashboardModel->where('id', $id)->findAll();
-    $dailyDelivery = $dailyDeliveryModel->where('campaign_id', $campaign)->orderBy('time', 'ASC')->findAll();
-    $data = [$creative, $inventory, $campaignInfo, $exchange, $adSize, $detail, $dailyDelivery];
+    $dailyDelivery = $dailyDeliveryModel->getUserData($campaign, $email);
+    $data = [$creative, $inventory, $campaignInfo, $exchange, $adSize, $dailyDelivery];
     return $this->setResponseFormat('json')->respond($data, 200);
   }
 
