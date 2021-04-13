@@ -34,8 +34,7 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 $routes->post('/login', 'Authentication::login');
-$routes->post('/register', 'Authentication::register');
-
+$routes->post('/signup', 'Register::signup');
 $routes->resource('dashboard');
 $routes->resource('reporting');
 
