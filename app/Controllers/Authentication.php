@@ -31,6 +31,7 @@ class Authentication extends ResourceController
     if ($isExist) {
       if (password_verify($password, $isExist['password'])) {
         $data = [
+          'id' => $isExist['id'],
           'message' => "Successfully logged in",
           'email' => $isExist['email'],
           'username' => $isExist['username'],
