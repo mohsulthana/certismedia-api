@@ -33,25 +33,8 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
-$routes->get('/report/impression', 'Report::impression');
-$routes->get('/report/click', 'Report::click');
-$routes->get('/report/conversion', 'Report::conversion');
-$routes->get('/report/view', 'Report::view');
-$routes->get('/report/first_quartile', 'Report::first_quartile');
-$routes->get('/report/mid_point', 'Report::mid_point');
-$routes->get('/report/third_quartile', 'Report::third_quartile');
-$routes->get('/report/completed', 'Report::completed');
 $routes->post('/login', 'Authentication::login');
-$routes->post('/register', 'Authentication::register');
-
-$routes->resource('impression');
-$routes->resource('click');
-$routes->resource('conversion');
-$routes->resource('views');
-$routes->resource('midpoint');
-$routes->resource('firstquartile');
-$routes->resource('thirdquartile');
-$routes->resource('completedview');
+$routes->post('/signup', 'Register::signup');
 $routes->resource('dashboard');
 $routes->resource('reporting');
 

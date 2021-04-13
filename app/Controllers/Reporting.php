@@ -26,37 +26,44 @@ class Reporting extends ResourceController
 
   public function getCampaignInformation($campaign, $id)
   {
+    $email = $this->request->getGet('email');
     $reportModel = new Reporting_model();
     $dashboardModel = new Dashboard_model();
     $dailyDeliveryModel = new Daily_delivery();
-    $inventory = $reportModel->getInventoryName($campaign);
-    $creative = $reportModel->getCreativeName($campaign);
-    $campaignInfo = $reportModel->getCampaignInformation($campaign);
-    $exchange = $reportModel->getExchangeName($campaign);
+    $inventory = $reportModel->getInventoryName($campaign, $email);
+    $creative = $reportModel->getCreativeName($campaign, $email);
+    $campaignInfo = $reportModel->getCampaignInformation($campaign, $email);
+    $exchange = $reportModel->getExchangeName($campaign, $email);
     $adSize = $reportModel->getAdSize($campaign);
-    $detail = $dashboardModel->where('id', $id)->findAll();
-    $dailyDelivery = $dailyDeliveryModel->where('campaign_id', $campaign)->orderBy('time', 'ASC')->findAll();
-    $data = [$creative, $inventory, $campaignInfo, $exchange, $adSize, $detail, $dailyDelivery];
+    $dailyDelivery = $dailyDeliveryModel->getUserData($campaign, $email);
+    $data = [$creative, $inventory, $campaignInfo, $exchange, $adSize, $dailyDelivery];
     return $this->setResponseFormat('json')->respond($data, 200);
   }
 
-  public function fetchFromAPI()
+  public function fetchFromAPI($id_user = null)
   {
     $client = \Config\Services::curlrequest();
     $usersModel = new User_model();
     $reportingModel = new Reporting_model();
-    $users = $usersModel->findAll();
+    
+    if($id_user != null) {
+      $users[0] = $usersModel->find($id_user);
+      if($users[0] == null) {
+        return $this->failResourceExists("Invalid Account");
+      }
+    } else  {
+      $users = $usersModel->findAll();
+    }
+      
     $day  = date('Y-m-d', strtotime("-7 days"));
     $url = "https://reporting.smadex.com/api/v2/performance?dimensions=campaign_id,creative_id,creative_name,creative_size,inventory_id,inventory_name,exchange_name&metrics=impressions,clicks,winrate,views,completed_views&startdate=$day&granularity=day";
 
-    try {
+    try {      
       foreach ($users as $user) {
-        $email = $user['email'];
-        $pass  = $user['password'];
         $response = $client->request('GET', $url, [
-          'auth' => [$email, $pass, 'basic'],
           'headers' => [
             'Accept'     => 'application/json',
+            'Authorization' => 'Basic '.$user['API']
           ],
           'connect_timeout' => 0
         ]);
@@ -70,25 +77,28 @@ class Reporting extends ResourceController
           }
 
           $tmp = [
-            'email'       => $email,
-            'campaign_id' => $value->campaign_id,
-            'creative_id' => $value->creative_id,
+            'email'       => $user['email'],
+            'campaign_id' => intval($value->campaign_id),
+            'creative_id' => intval($value->creative_id),
             'creative_name' => $value->creative_name,
             'creative_size' => $value->creative_size,
-            'inventory_id'  => $value->inventory_id,
+            'inventory_id'  => intval($value->inventory_id),
             'inventory_name'  => $value->inventory_name,
             'exchange_name' => $value->exchange_name,
-            'impression' => $value->impressions,
-            'view'  => $value->views,
-            'completed_view' => $value->completed_views,
-            'click' => $value->clicks,
-            'win_rate'  => $value->winrate,
-            'ctr' => $ctr,
-            'time'  => $value->time
+            'impression' => floatval($value->impressions),
+            'view'  => intval($value->views),
+            'completed_view' => intval($value->completed_views),
+            'click' => floatval($value->clicks),
+            'win_rate'  => floatval($value->winrate),
+            'ctr' => floatval($ctr),
+            'time'  => intval($value->time)
           ];
           array_push($report, $tmp);
         }
         $reportingModel->insertBatch($report);
+        if($user['statusReporting'] != 1) {
+          $usersModel->set(['statusReporting' => 1])->where('email', $user['email'])->update();
+        }
       }
       return 'success';
     } catch (Exception $e) {
@@ -96,23 +106,30 @@ class Reporting extends ResourceController
     }
   }
 
-  public function fetchDailyDelivery()
+  public function fetchDailyDelivery($emailParam = null, $passParam = null)
   {
     $client = \Config\Services::curlrequest();
     $usersModel = new User_model();
     $dailyDeliveryModel = new Daily_delivery();
-    $users = $usersModel->findAll();
+    
+    if($emailParam != null && $passParam != null) {
+      $users[0] = [
+        'email' => $emailParam,
+        'API' => base64_encode($emailParam.':'.$passParam),
+      ];
+    } else  {
+      $users = $usersModel->findAll();
+    }
+    
     $day  = date('Y-m-d', strtotime("-7 days"));
     $url = "https://reporting.smadex.com/api/v2/performance?dimensions=campaign_id&metrics=impressions,clicks,winrate,views,completed_views&startdate=$day&granularity=day";
 
     try {
       foreach ($users as $user) {
-        $email = $user['email'];
-        $pass  = $user['password'];
         $response = $client->request('GET', $url, [
-          'auth' => [$email, $pass, 'basic'],
           'headers' => [
             'Accept'     => 'application/json',
+            'Authorization' => 'Basic '.$user['API']
           ],
           'connect_timeout' => 0
         ]);
