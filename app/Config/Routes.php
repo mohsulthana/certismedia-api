@@ -38,8 +38,9 @@ $routes->post('/signup', 'Register::signup');
 $routes->resource('dashboard');
 $routes->resource('reporting');
 
-// CLI Routes
-// $routes->cli('')
+$routes->get('fetch-report/(:any)', 'Reporting::fetchFromAPI/$1');
+$routes->get('fetch-dashboard/(:any)', 'Dashboard::fetchFromAPI/$1');
+$routes->get('fetch-daily-delivery', 'Reporting::fetchDailyDelivery');
 
 /*
  * --------------------------------------------------------------------
