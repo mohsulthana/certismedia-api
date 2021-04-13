@@ -5,9 +5,6 @@ namespace App\Controllers;
 use App\Models\User_model;
 use CodeIgniter\RESTful\ResourceController;
 
-header('Access-Control-Allow-Origin: *');
-header("Access-Control-Allow-Methods: GET, OPTIONS, UPDATE, PUT");
-
 class Authentication extends ResourceController
 {
   protected $format = 'json';
@@ -31,6 +28,7 @@ class Authentication extends ResourceController
     if ($isExist) {
       if (password_verify($password, $isExist['password'])) {
         $data = [
+          'id'  => $isExist['id'],
           'message' => "Successfully logged in",
           'email' => $isExist['email'],
           'username' => $isExist['username'],
@@ -74,11 +72,16 @@ class Authentication extends ResourceController
         'API' => base64_encode($email.':'.$plain_password),
         'phone' => $phone
       ];
-      $user->insert($data);
-      // shell_exec('/usr/local/bin/php /home4/fykfaumy/public_html/api/public/index.php Reporting FetchFromAPI "'.$email.'" "'.$plain_password.'"');
-      // shell_exec('/usr/local/bin/php /home4/fykfaumy/public_html/api/public/index.php Reporting fetchDailyDelivery "'.$email.'" "'.$plain_password.'"');
-      // shell_exec('/usr/local/bin/php /home4/fykfaumy/public_html/api/public/index.php Dashboard FetchFromAPI "'.$email.'" "'.$plain_password.'"');
-      return $this->respondCreated("User registered successfully. Please wait for 10 minutes to login.");
+      $create = $user->insert($data);
+
+      $response = [
+        'message' => "User registered successfully",
+        'id' => $create
+      ];
+      shell_exec('/usr/local/bin/php /home4/fykfaumy/public_html/api/public/index.php Reporting FetchFromAPI "'.$email.'" "'.$plain_password.'"');
+      shell_exec('/usr/local/bin/php /home4/fykfaumy/public_html/api/public/index.php Reporting fetchDailyDelivery "'.$email.'" "'.$plain_password.'"');
+      shell_exec('/usr/local/bin/php /home4/fykfaumy/public_html/api/public/index.php Dashboard FetchFromAPI "'.$email.'" "'.$plain_password.'"');
+      return $this->respondCreated($response);
     }
   }
 }

@@ -32,7 +32,7 @@ class Database extends Config
 	 */
 	public $default = [
 		'DSN'      => '',
-		'hostname' => '127.0.0.1',
+		'hostname' => '127.0.0.1:8889',
 		'username' => 'root',
 		'password' => '',
 		'database' => 'certismedia',

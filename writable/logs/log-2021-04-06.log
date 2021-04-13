@@ -1,0 +1,323 @@
+ERROR - 2021-04-06 11:21:59 --> mysqli_sql_exception: Unknown column 'statusDashboard' in 'field list' in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:314
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(314): mysqli->query('UPDATE `user` S...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `user` S...')
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `user` S...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(2468): CodeIgniter\Database\BaseConnection->query('UPDATE `user` S...', Array, false)
+#4 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Model.php(353): CodeIgniter\Database\BaseBuilder->update()
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/BaseModel.php(901): CodeIgniter\Model->doUpdate(NULL, Array)
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Model.php(737): CodeIgniter\BaseModel->update(NULL, Array)
+#7 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Dashboard.php(77): CodeIgniter\Model->update()
+#8 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Dashboard->fetchFromAPI('1')
+#9 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#10 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#12 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#13 {main}
+ERROR - 2021-04-06 11:22:38 --> mysqli_sql_exception: Unknown column 'statusDashboard' in 'field list' in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:314
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(314): mysqli->query('UPDATE `user` S...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `user` S...')
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `user` S...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(2468): CodeIgniter\Database\BaseConnection->query('UPDATE `user` S...', Array, false)
+#4 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Model.php(353): CodeIgniter\Database\BaseBuilder->update()
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/BaseModel.php(901): CodeIgniter\Model->doUpdate(NULL, Array)
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Model.php(737): CodeIgniter\BaseModel->update(NULL, Array)
+#7 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Dashboard.php(77): CodeIgniter\Model->update()
+#8 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Dashboard->fetchFromAPI('1')
+#9 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#10 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#12 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#13 {main}
+ERROR - 2021-04-06 11:24:47 --> mysqli_sql_exception: Unknown column 'statusReporting' in 'field list' in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:314
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(314): mysqli->query('UPDATE `user` S...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `user` S...')
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `user` S...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(2468): CodeIgniter\Database\BaseConnection->query('UPDATE `user` S...', Array, false)
+#4 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Model.php(353): CodeIgniter\Database\BaseBuilder->update()
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/BaseModel.php(901): CodeIgniter\Model->doUpdate(NULL, Array)
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Model.php(737): CodeIgniter\BaseModel->update(NULL, Array)
+#7 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Reporting.php(102): CodeIgniter\Model->update()
+#8 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Reporting->fetchFromAPI('1')
+#9 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reporting))
+#10 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#12 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#13 {main}
+CRITICAL - 2021-04-06 11:25:25 --> CodeIgniter\HTTP\Exceptions\HTTPException: 22 : The requested URL returned error: 401 in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/HTTP/CURLRequest.php:805
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/HTTP/CURLRequest.php(805): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError('22', 'The requested U...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/HTTP/CURLRequest.php(418): CodeIgniter\HTTP\CURLRequest->sendRequest(Array)
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/HTTP/CURLRequest.php(127): CodeIgniter\HTTP\CURLRequest->send('GET', 'https://reporti...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Dashboard.php(50): CodeIgniter\HTTP\CURLRequest->request('GET', 'https://reporti...', Array)
+#4 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Dashboard->fetchFromAPI('3')
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#8 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#9 {main}
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Dashboard->fetchFromAPI('3')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#4 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#5 {main}
+CRITICAL - 2021-04-06 11:25:26 --> CodeIgniter\HTTP\Exceptions\HTTPException: 22 : The requested URL returned error: 401 in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/HTTP/CURLRequest.php:805
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/HTTP/CURLRequest.php(805): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError('22', 'The requested U...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/HTTP/CURLRequest.php(418): CodeIgniter\HTTP\CURLRequest->sendRequest(Array)
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/HTTP/CURLRequest.php(127): CodeIgniter\HTTP\CURLRequest->send('GET', 'https://reporti...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Reporting.php(70): CodeIgniter\HTTP\CURLRequest->request('GET', 'https://reporti...', Array, Array)
+#4 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Reporting->fetchFromAPI('3')
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reporting))
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#8 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#9 {main}
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Reporting->fetchFromAPI('3')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reporting))
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#4 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#5 {main}
+CRITICAL - 2021-04-06 11:26:11 --> CodeIgniter\HTTP\Exceptions\HTTPException: 22 : The requested URL returned error: 401 in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/HTTP/CURLRequest.php:805
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/HTTP/CURLRequest.php(805): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError('22', 'The requested U...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/HTTP/CURLRequest.php(418): CodeIgniter\HTTP\CURLRequest->sendRequest(Array)
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/HTTP/CURLRequest.php(127): CodeIgniter\HTTP\CURLRequest->send('GET', 'https://reporti...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Dashboard.php(50): CodeIgniter\HTTP\CURLRequest->request('GET', 'https://reporti...', Array)
+#4 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Dashboard->fetchFromAPI('4')
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#8 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#9 {main}
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Dashboard->fetchFromAPI('4')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#4 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#5 {main}
+CRITICAL - 2021-04-06 11:26:12 --> CodeIgniter\HTTP\Exceptions\HTTPException: 22 : The requested URL returned error: 401 in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/HTTP/CURLRequest.php:805
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/HTTP/CURLRequest.php(805): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError('22', 'The requested U...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/HTTP/CURLRequest.php(418): CodeIgniter\HTTP\CURLRequest->sendRequest(Array)
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/HTTP/CURLRequest.php(127): CodeIgniter\HTTP\CURLRequest->send('GET', 'https://reporti...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Reporting.php(70): CodeIgniter\HTTP\CURLRequest->request('GET', 'https://reporti...', Array, Array)
+#4 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Reporting->fetchFromAPI('4')
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reporting))
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#8 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#9 {main}
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Reporting->fetchFromAPI('4')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reporting))
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#4 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#5 {main}
+ERROR - 2021-04-06 11:40:37 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'GROUP BY `time` ASC' at line 1 in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:314
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(314): mysqli->query('SELECT * FROM `...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('SELECT * FROM `...')
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT * FROM `...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/app/Models/Daily_delivery.php(13): CodeIgniter\Database\BaseConnection->query('SELECT * FROM `...', Array)
+#4 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Reporting.php(39): App\Models\Daily_delivery->getUserData('28918', 'cm1056@certisme...')
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Reporting->getCampaignInformation('28918', '5')
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reporting))
+#7 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#9 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#10 {main}
+ERROR - 2021-04-06 12:34:59 --> mysqli_sql_exception: Unknown column 'statusDashboard' in 'field list' in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:314
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(314): mysqli->query('UPDATE `user` S...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `user` S...')
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `user` S...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(2468): CodeIgniter\Database\BaseConnection->query('UPDATE `user` S...', Array, false)
+#4 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Model.php(353): CodeIgniter\Database\BaseBuilder->update()
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/BaseModel.php(901): CodeIgniter\Model->doUpdate(NULL, Array)
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Model.php(737): CodeIgniter\BaseModel->update(NULL, Array)
+#7 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Dashboard.php(77): CodeIgniter\Model->update()
+#8 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Dashboard->fetchFromAPI()
+#9 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#10 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#12 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#13 {main}
+CRITICAL - 2021-04-06 12:35:00 --> CodeIgniter\HTTP\Exceptions\HTTPException: 22 : The requested URL returned error: 403 in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/HTTP/CURLRequest.php:805
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/HTTP/CURLRequest.php(805): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError('22', 'The requested U...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/HTTP/CURLRequest.php(418): CodeIgniter\HTTP\CURLRequest->sendRequest(Array)
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/HTTP/CURLRequest.php(127): CodeIgniter\HTTP\CURLRequest->send('GET', 'https://reporti...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Dashboard.php(50): CodeIgniter\HTTP\CURLRequest->request('GET', 'https://reporti...', Array)
+#4 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Dashboard->fetchFromAPI()
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#8 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#9 {main}
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Dashboard->fetchFromAPI()
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#4 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#5 {main}
+ERROR - 2021-04-06 12:35:40 --> mysqli_sql_exception: Unknown column 'statusDashboard' in 'field list' in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:314
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(314): mysqli->query('UPDATE `user` S...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `user` S...')
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `user` S...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(2468): CodeIgniter\Database\BaseConnection->query('UPDATE `user` S...', Array, false)
+#4 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Model.php(353): CodeIgniter\Database\BaseBuilder->update()
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/BaseModel.php(901): CodeIgniter\Model->doUpdate(NULL, Array)
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Model.php(737): CodeIgniter\BaseModel->update(NULL, Array)
+#7 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Dashboard.php(77): CodeIgniter\Model->update()
+#8 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Dashboard->fetchFromAPI()
+#9 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#10 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#12 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#13 {main}
+CRITICAL - 2021-04-06 12:35:43 --> CodeIgniter\HTTP\Exceptions\HTTPException: 22 : The requested URL returned error: 403 in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/HTTP/CURLRequest.php:805
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/HTTP/CURLRequest.php(805): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError('22', 'The requested U...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/HTTP/CURLRequest.php(418): CodeIgniter\HTTP\CURLRequest->sendRequest(Array)
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/HTTP/CURLRequest.php(127): CodeIgniter\HTTP\CURLRequest->send('GET', 'https://reporti...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Dashboard.php(50): CodeIgniter\HTTP\CURLRequest->request('GET', 'https://reporti...', Array)
+#4 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Dashboard->fetchFromAPI()
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#8 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#9 {main}
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Dashboard->fetchFromAPI()
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#4 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#5 {main}
+CRITICAL - 2021-04-06 12:45:14 --> CodeIgniter\HTTP\Exceptions\HTTPException: 22 : The requested URL returned error: 502 in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/HTTP/CURLRequest.php:805
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/HTTP/CURLRequest.php(805): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError('22', 'The requested U...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/HTTP/CURLRequest.php(418): CodeIgniter\HTTP\CURLRequest->sendRequest(Array)
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/HTTP/CURLRequest.php(127): CodeIgniter\HTTP\CURLRequest->send('GET', 'https://reporti...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Reporting.php(70): CodeIgniter\HTTP\CURLRequest->request('GET', 'https://reporti...', Array, Array)
+#4 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Reporting->fetchFromAPI('1')
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reporting))
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#8 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#9 {main}
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Reporting->fetchFromAPI('1')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reporting))
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#4 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#5 {main}
+CRITICAL - 2021-04-06 12:46:42 --> CodeIgniter\HTTP\Exceptions\HTTPException: 22 : The requested URL returned error: 403 in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/HTTP/CURLRequest.php:805
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/HTTP/CURLRequest.php(805): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError('22', 'The requested U...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/HTTP/CURLRequest.php(418): CodeIgniter\HTTP\CURLRequest->sendRequest(Array)
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/HTTP/CURLRequest.php(127): CodeIgniter\HTTP\CURLRequest->send('GET', 'https://reporti...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Dashboard.php(50): CodeIgniter\HTTP\CURLRequest->request('GET', 'https://reporti...', Array)
+#4 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Dashboard->fetchFromAPI('2')
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#8 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#9 {main}
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Dashboard->fetchFromAPI('2')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#4 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#5 {main}
+CRITICAL - 2021-04-06 12:46:49 --> CodeIgniter\HTTP\Exceptions\HTTPException: 22 : The requested URL returned error: 403 in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/HTTP/CURLRequest.php:805
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/HTTP/CURLRequest.php(805): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError('22', 'The requested U...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/HTTP/CURLRequest.php(418): CodeIgniter\HTTP\CURLRequest->sendRequest(Array)
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/HTTP/CURLRequest.php(127): CodeIgniter\HTTP\CURLRequest->send('GET', 'https://reporti...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Dashboard.php(50): CodeIgniter\HTTP\CURLRequest->request('GET', 'https://reporti...', Array)
+#4 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Dashboard->fetchFromAPI('2')
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#8 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#9 {main}
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Dashboard->fetchFromAPI('2')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#4 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#5 {main}
+CRITICAL - 2021-04-06 12:46:56 --> CodeIgniter\HTTP\Exceptions\HTTPException: 22 : The requested URL returned error: 403 in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/HTTP/CURLRequest.php:805
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/HTTP/CURLRequest.php(805): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError('22', 'The requested U...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/HTTP/CURLRequest.php(418): CodeIgniter\HTTP\CURLRequest->sendRequest(Array)
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/HTTP/CURLRequest.php(127): CodeIgniter\HTTP\CURLRequest->send('GET', 'https://reporti...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Dashboard.php(50): CodeIgniter\HTTP\CURLRequest->request('GET', 'https://reporti...', Array)
+#4 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Dashboard->fetchFromAPI('2')
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#8 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#9 {main}
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Dashboard->fetchFromAPI('2')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#4 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#5 {main}
+CRITICAL - 2021-04-06 12:47:19 --> CodeIgniter\HTTP\Exceptions\HTTPException: 22 : The requested URL returned error: 403 in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/HTTP/CURLRequest.php:805
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/HTTP/CURLRequest.php(805): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError('22', 'The requested U...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/HTTP/CURLRequest.php(418): CodeIgniter\HTTP\CURLRequest->sendRequest(Array)
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/HTTP/CURLRequest.php(127): CodeIgniter\HTTP\CURLRequest->send('GET', 'https://reporti...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Dashboard.php(50): CodeIgniter\HTTP\CURLRequest->request('GET', 'https://reporti...', Array)
+#4 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Dashboard->fetchFromAPI('2')
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#8 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#9 {main}
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Dashboard->fetchFromAPI('2')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#4 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#5 {main}
+ERROR - 2021-04-06 12:49:01 --> mysqli_sql_exception: Unknown column 'statusDashboard' in 'field list' in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:314
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(314): mysqli->query('UPDATE `user` S...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `user` S...')
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `user` S...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(2468): CodeIgniter\Database\BaseConnection->query('UPDATE `user` S...', Array, false)
+#4 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Model.php(353): CodeIgniter\Database\BaseBuilder->update()
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/BaseModel.php(901): CodeIgniter\Model->doUpdate(NULL, Array)
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Model.php(737): CodeIgniter\BaseModel->update(NULL, Array)
+#7 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Dashboard.php(77): CodeIgniter\Model->update()
+#8 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Dashboard->fetchFromAPI('1')
+#9 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#10 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#12 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#13 {main}
+ERROR - 2021-04-06 12:49:21 --> mysqli_sql_exception: Unknown column 'statusReporting' in 'field list' in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:314
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(314): mysqli->query('UPDATE `user` S...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `user` S...')
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `user` S...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(2468): CodeIgniter\Database\BaseConnection->query('UPDATE `user` S...', Array, false)
+#4 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Model.php(353): CodeIgniter\Database\BaseBuilder->update()
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/BaseModel.php(901): CodeIgniter\Model->doUpdate(NULL, Array)
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Model.php(737): CodeIgniter\BaseModel->update(NULL, Array)
+#7 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Reporting.php(102): CodeIgniter\Model->update()
+#8 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Reporting->fetchFromAPI('1')
+#9 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reporting))
+#10 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#12 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#13 {main}

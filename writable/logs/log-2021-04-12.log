@@ -1,0 +1,39 @@
+ERROR - 2021-04-12 23:46:11 --> Error connecting to the database: Connection refused
+CRITICAL - 2021-04-12 23:46:11 --> Unable to connect to the database.
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(618): CodeIgniter\Database\BaseConnection->initialize()
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1866): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Model.php(247): CodeIgniter\Database\BaseBuilder->get()
+#3 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/BaseModel.php(624): CodeIgniter\Model->doFirst()
+#4 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Register.php(31): CodeIgniter\BaseModel->first()
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Register->signup()
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Register))
+#7 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#9 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#10 {main}
+ERROR - 2021-04-12 23:46:54 --> Error connecting to the database: MySQL server has gone away
+CRITICAL - 2021-04-12 23:46:54 --> Unable to connect to the database.
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(618): CodeIgniter\Database\BaseConnection->initialize()
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1866): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Model.php(247): CodeIgniter\Database\BaseBuilder->get()
+#3 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/BaseModel.php(624): CodeIgniter\Model->doFirst()
+#4 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Register.php(31): CodeIgniter\BaseModel->first()
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Register->signup()
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Register))
+#7 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#9 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#10 {main}
+ERROR - 2021-04-12 23:47:57 --> Error connecting to the database: Access denied for user '****'@'localhost' (using password: NO)
+CRITICAL - 2021-04-12 23:47:57 --> Unable to connect to the database.
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(618): CodeIgniter\Database\BaseConnection->initialize()
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1866): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Model.php(247): CodeIgniter\Database\BaseBuilder->get()
+#3 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/BaseModel.php(624): CodeIgniter\Model->doFirst()
+#4 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Register.php(31): CodeIgniter\BaseModel->first()
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Register->signup()
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Register))
+#7 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#9 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#10 {main}

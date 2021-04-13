@@ -1,0 +1,1324 @@
+ERROR - 2021-04-02 05:03:25 --> Error connecting to the database: Connection refused
+CRITICAL - 2021-04-02 05:03:25 --> Unable to connect to the database.
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(618): CodeIgniter\Database\BaseConnection->initialize()
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1866): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Model.php(247): CodeIgniter\Database\BaseBuilder->get()
+#3 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/BaseModel.php(624): CodeIgniter\Model->doFirst()
+#4 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Authentication.php(29): CodeIgniter\BaseModel->first()
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Authentication->login()
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentication))
+#7 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#9 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#10 {main}
+ERROR - 2021-04-02 05:14:32 --> mysqli_sql_exception: Unknown column 'statusReporting' in 'field list' in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:314
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(314): mysqli->query('UPDATE `user` S...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `user` S...')
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `user` S...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(2468): CodeIgniter\Database\BaseConnection->query('UPDATE `user` S...', Array, false)
+#4 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Model.php(353): CodeIgniter\Database\BaseBuilder->update()
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/BaseModel.php(901): CodeIgniter\Model->doUpdate(NULL, Array)
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Model.php(737): CodeIgniter\BaseModel->update(NULL, Array)
+#7 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Reporting.php(100): CodeIgniter\Model->update()
+#8 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Reporting->fetchFromAPI('2')
+#9 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reporting))
+#10 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#12 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#13 {main}
+ERROR - 2021-04-02 05:15:19 --> mysqli_sql_exception: Unknown column 'statusReporting' in 'field list' in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:314
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(314): mysqli->query('UPDATE `user` S...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `user` S...')
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `user` S...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(2468): CodeIgniter\Database\BaseConnection->query('UPDATE `user` S...', Array, false)
+#4 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Model.php(353): CodeIgniter\Database\BaseBuilder->update()
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/BaseModel.php(901): CodeIgniter\Model->doUpdate(NULL, Array)
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Model.php(737): CodeIgniter\BaseModel->update(NULL, Array)
+#7 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Reporting.php(100): CodeIgniter\Model->update()
+#8 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Reporting->fetchFromAPI('2')
+#9 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reporting))
+#10 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#12 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#13 {main}
+ERROR - 2021-04-02 07:55:02 --> mysqli_sql_exception: Unknown column 'statusReporting' in 'field list' in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:314
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(314): mysqli->query('UPDATE `user` S...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `user` S...')
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `user` S...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(2468): CodeIgniter\Database\BaseConnection->query('UPDATE `user` S...', Array, false)
+#4 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Model.php(353): CodeIgniter\Database\BaseBuilder->update()
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/BaseModel.php(901): CodeIgniter\Model->doUpdate(NULL, Array)
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Model.php(737): CodeIgniter\BaseModel->update(NULL, Array)
+#7 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Reporting.php(100): CodeIgniter\Model->update()
+#8 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Reporting->fetchFromAPI('2')
+#9 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reporting))
+#10 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#12 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#13 {main}
+ERROR - 2021-04-02 07:56:22 --> mysqli_sql_exception: Unknown column 'statusReporting' in 'field list' in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:314
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(314): mysqli->query('UPDATE `user` S...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `user` S...')
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `user` S...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(2468): CodeIgniter\Database\BaseConnection->query('UPDATE `user` S...', Array, false)
+#4 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Model.php(353): CodeIgniter\Database\BaseBuilder->update()
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/BaseModel.php(901): CodeIgniter\Model->doUpdate(NULL, Array)
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Model.php(737): CodeIgniter\BaseModel->update(NULL, Array)
+#7 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Reporting.php(100): CodeIgniter\Model->update()
+#8 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Reporting->fetchFromAPI('2')
+#9 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reporting))
+#10 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#12 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#13 {main}
+ERROR - 2021-04-02 07:57:53 --> mysqli_sql_exception: Unknown column 'statusReporting' in 'field list' in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:314
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(314): mysqli->query('UPDATE `user` S...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `user` S...')
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `user` S...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(2468): CodeIgniter\Database\BaseConnection->query('UPDATE `user` S...', Array, false)
+#4 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Model.php(353): CodeIgniter\Database\BaseBuilder->update()
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/BaseModel.php(901): CodeIgniter\Model->doUpdate(NULL, Array)
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Model.php(737): CodeIgniter\BaseModel->update(NULL, Array)
+#7 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Reporting.php(100): CodeIgniter\Model->update()
+#8 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Reporting->fetchFromAPI('2')
+#9 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reporting))
+#10 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#12 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#13 {main}
+CRITICAL - 2021-04-02 08:07:35 --> syntax error, unexpected 'return' (T_RETURN)
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Autoloader/Autoloader.php(265): CodeIgniter\Autoloader\Autoloader->includeFile('/Users/mohammad...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Autoloader/Autoloader.php(228): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers...')
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers...')
+#3 [internal function]: spl_autoload_call('App\\Controllers...')
+#4 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(893): class_exists('\\App\\Controller...', true)
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(417): CodeIgniter\CodeIgniter->startController()
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#8 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#9 {main}
+CRITICAL - 2021-04-02 08:07:40 --> syntax error, unexpected 'return' (T_RETURN)
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Autoloader/Autoloader.php(265): CodeIgniter\Autoloader\Autoloader->includeFile('/Users/mohammad...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Autoloader/Autoloader.php(228): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers...')
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers...')
+#3 [internal function]: spl_autoload_call('App\\Controllers...')
+#4 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(893): class_exists('\\App\\Controller...', true)
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(417): CodeIgniter\CodeIgniter->startController()
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#8 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#9 {main}
+CRITICAL - 2021-04-02 09:07:06 --> CodeIgniter\HTTP\Exceptions\HTTPException: 22 : The requested URL returned error: 401 in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/HTTP/CURLRequest.php:805
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/HTTP/CURLRequest.php(805): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError('22', 'The requested U...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/HTTP/CURLRequest.php(418): CodeIgniter\HTTP\CURLRequest->sendRequest(Array)
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/HTTP/CURLRequest.php(127): CodeIgniter\HTTP\CURLRequest->send('GET', 'https://reporti...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Reporting.php(69): CodeIgniter\HTTP\CURLRequest->request('GET', 'https://reporti...', Array, Array)
+#4 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Reporting->fetchFromAPI('34')
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reporting))
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#8 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#9 {main}
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Reporting->fetchFromAPI('34')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reporting))
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#4 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#5 {main}
+CRITICAL - 2021-04-02 09:07:34 --> CodeIgniter\HTTP\Exceptions\HTTPException: 22 : The requested URL returned error: 401 in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/HTTP/CURLRequest.php:805
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/HTTP/CURLRequest.php(805): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError('22', 'The requested U...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/HTTP/CURLRequest.php(418): CodeIgniter\HTTP\CURLRequest->sendRequest(Array)
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/HTTP/CURLRequest.php(127): CodeIgniter\HTTP\CURLRequest->send('GET', 'https://reporti...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Reporting.php(69): CodeIgniter\HTTP\CURLRequest->request('GET', 'https://reporti...', Array, Array)
+#4 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Reporting->fetchFromAPI('35')
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reporting))
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#8 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#9 {main}
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Reporting->fetchFromAPI('35')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reporting))
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#4 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#5 {main}
+CRITICAL - 2021-04-02 09:08:48 --> CodeIgniter\HTTP\Exceptions\HTTPException: 22 : The requested URL returned error: 401 in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/HTTP/CURLRequest.php:805
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/HTTP/CURLRequest.php(805): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError('22', 'The requested U...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/HTTP/CURLRequest.php(418): CodeIgniter\HTTP\CURLRequest->sendRequest(Array)
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/HTTP/CURLRequest.php(127): CodeIgniter\HTTP\CURLRequest->send('GET', 'https://reporti...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Reporting.php(69): CodeIgniter\HTTP\CURLRequest->request('GET', 'https://reporti...', Array, Array)
+#4 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Reporting->fetchFromAPI('36')
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reporting))
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#8 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#9 {main}
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Reporting->fetchFromAPI('36')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reporting))
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#4 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#5 {main}
+CRITICAL - 2021-04-02 09:10:51 --> CodeIgniter\HTTP\Exceptions\HTTPException: 22 : The requested URL returned error: 401 in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/HTTP/CURLRequest.php:805
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/HTTP/CURLRequest.php(805): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError('22', 'The requested U...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/HTTP/CURLRequest.php(418): CodeIgniter\HTTP\CURLRequest->sendRequest(Array)
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/HTTP/CURLRequest.php(127): CodeIgniter\HTTP\CURLRequest->send('GET', 'https://reporti...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Reporting.php(69): CodeIgniter\HTTP\CURLRequest->request('GET', 'https://reporti...', Array, Array)
+#4 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Reporting->fetchFromAPI('37')
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reporting))
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#8 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#9 {main}
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Reporting->fetchFromAPI('37')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reporting))
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#4 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#5 {main}
+CRITICAL - 2021-04-02 09:11:11 --> CodeIgniter\HTTP\Exceptions\HTTPException: 22 : The requested URL returned error: 401 in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/HTTP/CURLRequest.php:805
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/HTTP/CURLRequest.php(805): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError('22', 'The requested U...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/HTTP/CURLRequest.php(418): CodeIgniter\HTTP\CURLRequest->sendRequest(Array)
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/HTTP/CURLRequest.php(127): CodeIgniter\HTTP\CURLRequest->send('GET', 'https://reporti...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Reporting.php(69): CodeIgniter\HTTP\CURLRequest->request('GET', 'https://reporti...', Array, Array)
+#4 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Reporting->fetchFromAPI('38')
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reporting))
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#8 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#9 {main}
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Reporting->fetchFromAPI('38')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reporting))
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#4 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#5 {main}
+CRITICAL - 2021-04-02 09:11:26 --> CodeIgniter\HTTP\Exceptions\HTTPException: 22 : The requested URL returned error: 401 in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/HTTP/CURLRequest.php:805
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/HTTP/CURLRequest.php(805): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError('22', 'The requested U...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/HTTP/CURLRequest.php(418): CodeIgniter\HTTP\CURLRequest->sendRequest(Array)
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/HTTP/CURLRequest.php(127): CodeIgniter\HTTP\CURLRequest->send('GET', 'https://reporti...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Reporting.php(69): CodeIgniter\HTTP\CURLRequest->request('GET', 'https://reporti...', Array, Array)
+#4 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Reporting->fetchFromAPI('39')
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reporting))
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#8 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#9 {main}
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Reporting->fetchFromAPI('39')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reporting))
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#4 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#5 {main}
+ERROR - 2021-04-02 09:14:15 --> mysqli_sql_exception: Unknown column 'statusReporting' in 'field list' in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:314
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(314): mysqli->query('UPDATE `user` S...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `user` S...')
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `user` S...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(2468): CodeIgniter\Database\BaseConnection->query('UPDATE `user` S...', Array, false)
+#4 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Model.php(353): CodeIgniter\Database\BaseBuilder->update()
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/BaseModel.php(901): CodeIgniter\Model->doUpdate(NULL, Array)
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Model.php(737): CodeIgniter\BaseModel->update(NULL, Array)
+#7 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Reporting.php(101): CodeIgniter\Model->update()
+#8 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Reporting->fetchFromAPI('40')
+#9 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reporting))
+#10 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#12 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#13 {main}
+ERROR - 2021-04-02 09:17:00 --> mysqli_sql_exception: Unknown column 'statusReporting' in 'field list' in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:314
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(314): mysqli->query('UPDATE `user` S...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `user` S...')
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `user` S...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(2468): CodeIgniter\Database\BaseConnection->query('UPDATE `user` S...', Array, false)
+#4 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Model.php(353): CodeIgniter\Database\BaseBuilder->update()
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/BaseModel.php(901): CodeIgniter\Model->doUpdate(NULL, Array)
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Model.php(737): CodeIgniter\BaseModel->update(NULL, Array)
+#7 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Reporting.php(101): CodeIgniter\Model->update()
+#8 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Reporting->fetchFromAPI('1')
+#9 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reporting))
+#10 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#12 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#13 {main}
+ERROR - 2021-04-02 09:23:16 --> mysqli_sql_exception: Unknown column 'statusReporting' in 'field list' in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:314
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(314): mysqli->query('UPDATE `user` S...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `user` S...')
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `user` S...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(2468): CodeIgniter\Database\BaseConnection->query('UPDATE `user` S...', Array, false)
+#4 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Model.php(353): CodeIgniter\Database\BaseBuilder->update()
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/BaseModel.php(901): CodeIgniter\Model->doUpdate(NULL, Array)
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Model.php(737): CodeIgniter\BaseModel->update(NULL, Array)
+#7 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Reporting.php(101): CodeIgniter\Model->update()
+#8 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Reporting->fetchFromAPI('1')
+#9 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reporting))
+#10 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#12 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#13 {main}
+ERROR - 2021-04-02 09:24:11 --> mysqli_sql_exception: Unknown column 'statusReporting' in 'field list' in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:314
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(314): mysqli->query('UPDATE `user` S...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `user` S...')
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `user` S...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(2468): CodeIgniter\Database\BaseConnection->query('UPDATE `user` S...', Array, false)
+#4 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Model.php(353): CodeIgniter\Database\BaseBuilder->update()
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/BaseModel.php(901): CodeIgniter\Model->doUpdate(NULL, Array)
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Model.php(737): CodeIgniter\BaseModel->update(NULL, Array)
+#7 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Reporting.php(101): CodeIgniter\Model->update()
+#8 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Reporting->fetchFromAPI('1')
+#9 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reporting))
+#10 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#12 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#13 {main}
+ERROR - 2021-04-02 09:26:38 --> mysqli_sql_exception: Unknown column 'statusReporting' in 'field list' in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:314
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(314): mysqli->query('UPDATE `user` S...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `user` S...')
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `user` S...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(2468): CodeIgniter\Database\BaseConnection->query('UPDATE `user` S...', Array, false)
+#4 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Model.php(353): CodeIgniter\Database\BaseBuilder->update()
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/BaseModel.php(901): CodeIgniter\Model->doUpdate(NULL, Array)
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Model.php(737): CodeIgniter\BaseModel->update(NULL, Array)
+#7 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Reporting.php(101): CodeIgniter\Model->update()
+#8 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Reporting->fetchFromAPI('1')
+#9 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reporting))
+#10 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#12 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#13 {main}
+ERROR - 2021-04-02 09:27:02 --> mysqli_sql_exception: Unknown column 'statusDashboard' in 'field list' in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:314
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(314): mysqli->query('UPDATE `user` S...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `user` S...')
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `user` S...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(2468): CodeIgniter\Database\BaseConnection->query('UPDATE `user` S...', Array, false)
+#4 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Model.php(353): CodeIgniter\Database\BaseBuilder->update()
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/BaseModel.php(901): CodeIgniter\Model->doUpdate(NULL, Array)
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Model.php(737): CodeIgniter\BaseModel->update(NULL, Array)
+#7 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Dashboard.php(72): CodeIgniter\Model->update()
+#8 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Dashboard->fetchFromAPI('1')
+#9 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#10 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#12 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#13 {main}
+ERROR - 2021-04-02 09:33:18 --> mysqli_sql_exception: Unknown column 'statusReporting' in 'field list' in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:314
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(314): mysqli->query('UPDATE `user` S...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `user` S...')
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `user` S...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(2468): CodeIgniter\Database\BaseConnection->query('UPDATE `user` S...', Array, false)
+#4 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Model.php(353): CodeIgniter\Database\BaseBuilder->update()
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/BaseModel.php(901): CodeIgniter\Model->doUpdate(NULL, Array)
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Model.php(737): CodeIgniter\BaseModel->update(NULL, Array)
+#7 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Reporting.php(101): CodeIgniter\Model->update()
+#8 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Reporting->fetchFromAPI('1')
+#9 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reporting))
+#10 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#12 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#13 {main}
+CRITICAL - 2021-04-02 09:36:22 --> CodeIgniter\HTTP\Exceptions\HTTPException: 22 : The requested URL returned error: 503 in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/HTTP/CURLRequest.php:805
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/HTTP/CURLRequest.php(805): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError('22', 'The requested U...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/HTTP/CURLRequest.php(418): CodeIgniter\HTTP\CURLRequest->sendRequest(Array)
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/HTTP/CURLRequest.php(127): CodeIgniter\HTTP\CURLRequest->send('GET', 'https://reporti...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Reporting.php(69): CodeIgniter\HTTP\CURLRequest->request('GET', 'https://reporti...', Array, Array)
+#4 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Reporting->fetchFromAPI('2')
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reporting))
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#8 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#9 {main}
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Reporting->fetchFromAPI('2')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reporting))
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#4 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#5 {main}
+ERROR - 2021-04-02 09:38:15 --> mysqli_sql_exception: Unknown column 'statusDashboard' in 'field list' in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:314
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(314): mysqli->query('UPDATE `user` S...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `user` S...')
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `user` S...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(2468): CodeIgniter\Database\BaseConnection->query('UPDATE `user` S...', Array, false)
+#4 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Model.php(353): CodeIgniter\Database\BaseBuilder->update()
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/BaseModel.php(901): CodeIgniter\Model->doUpdate(NULL, Array)
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Model.php(737): CodeIgniter\BaseModel->update(NULL, Array)
+#7 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Dashboard.php(72): CodeIgniter\Model->update()
+#8 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Dashboard->fetchFromAPI('2')
+#9 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#10 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#12 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#13 {main}
+ERROR - 2021-04-02 09:45:28 --> mysqli_sql_exception: Unknown column 'statusDashboard' in 'field list' in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:314
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(314): mysqli->query('UPDATE `user` S...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `user` S...')
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `user` S...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(2468): CodeIgniter\Database\BaseConnection->query('UPDATE `user` S...', Array, false)
+#4 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Model.php(353): CodeIgniter\Database\BaseBuilder->update()
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/BaseModel.php(901): CodeIgniter\Model->doUpdate(NULL, Array)
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Model.php(737): CodeIgniter\BaseModel->update(NULL, Array)
+#7 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Dashboard.php(72): CodeIgniter\Model->update()
+#8 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Dashboard->fetchFromAPI('1')
+#9 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#10 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#12 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#13 {main}
+ERROR - 2021-04-02 09:46:07 --> mysqli_sql_exception: Unknown column 'statusReporting' in 'field list' in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:314
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(314): mysqli->query('UPDATE `user` S...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `user` S...')
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `user` S...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(2468): CodeIgniter\Database\BaseConnection->query('UPDATE `user` S...', Array, false)
+#4 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Model.php(353): CodeIgniter\Database\BaseBuilder->update()
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/BaseModel.php(901): CodeIgniter\Model->doUpdate(NULL, Array)
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Model.php(737): CodeIgniter\BaseModel->update(NULL, Array)
+#7 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Reporting.php(101): CodeIgniter\Model->update()
+#8 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Reporting->fetchFromAPI('1')
+#9 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reporting))
+#10 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#12 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#13 {main}
+ERROR - 2021-04-02 09:48:50 --> mysqli_sql_exception: Unknown column 'statusDashboard' in 'field list' in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:314
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(314): mysqli->query('UPDATE `user` S...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `user` S...')
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `user` S...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(2468): CodeIgniter\Database\BaseConnection->query('UPDATE `user` S...', Array, false)
+#4 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Model.php(353): CodeIgniter\Database\BaseBuilder->update()
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/BaseModel.php(901): CodeIgniter\Model->doUpdate(NULL, Array)
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Model.php(737): CodeIgniter\BaseModel->update(NULL, Array)
+#7 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Dashboard.php(75): CodeIgniter\Model->update()
+#8 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Dashboard->fetchFromAPI('1')
+#9 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#10 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#12 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#13 {main}
+ERROR - 2021-04-02 09:49:39 --> mysqli_sql_exception: Unknown column 'statusReporting' in 'field list' in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:314
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(314): mysqli->query('UPDATE `user` S...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `user` S...')
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `user` S...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(2468): CodeIgniter\Database\BaseConnection->query('UPDATE `user` S...', Array, false)
+#4 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Model.php(353): CodeIgniter\Database\BaseBuilder->update()
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/BaseModel.php(901): CodeIgniter\Model->doUpdate(NULL, Array)
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Model.php(737): CodeIgniter\BaseModel->update(NULL, Array)
+#7 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Reporting.php(101): CodeIgniter\Model->update()
+#8 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Reporting->fetchFromAPI('1')
+#9 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reporting))
+#10 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#12 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#13 {main}
+ERROR - 2021-04-02 09:52:18 --> mysqli_sql_exception: Unknown column 'statusDashboard' in 'field list' in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:314
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(314): mysqli->query('UPDATE `user` S...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `user` S...')
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `user` S...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(2468): CodeIgniter\Database\BaseConnection->query('UPDATE `user` S...', Array, false)
+#4 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Model.php(353): CodeIgniter\Database\BaseBuilder->update()
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/BaseModel.php(901): CodeIgniter\Model->doUpdate(NULL, Array)
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Model.php(737): CodeIgniter\BaseModel->update(NULL, Array)
+#7 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Dashboard.php(75): CodeIgniter\Model->update()
+#8 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Dashboard->fetchFromAPI('1')
+#9 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#10 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#12 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#13 {main}
+ERROR - 2021-04-02 09:53:43 --> mysqli_sql_exception: Unknown column 'statusReporting' in 'field list' in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:314
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(314): mysqli->query('UPDATE `user` S...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `user` S...')
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `user` S...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(2468): CodeIgniter\Database\BaseConnection->query('UPDATE `user` S...', Array, false)
+#4 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Model.php(353): CodeIgniter\Database\BaseBuilder->update()
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/BaseModel.php(901): CodeIgniter\Model->doUpdate(NULL, Array)
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Model.php(737): CodeIgniter\BaseModel->update(NULL, Array)
+#7 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Reporting.php(101): CodeIgniter\Model->update()
+#8 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Reporting->fetchFromAPI('1')
+#9 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reporting))
+#10 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#12 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#13 {main}
+ERROR - 2021-04-02 10:00:36 --> mysqli_sql_exception: Unknown column 'statusDashboard' in 'field list' in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:314
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(314): mysqli->query('UPDATE `user` S...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `user` S...')
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `user` S...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(2468): CodeIgniter\Database\BaseConnection->query('UPDATE `user` S...', Array, false)
+#4 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Model.php(353): CodeIgniter\Database\BaseBuilder->update()
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/BaseModel.php(901): CodeIgniter\Model->doUpdate(NULL, Array)
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Model.php(737): CodeIgniter\BaseModel->update(NULL, Array)
+#7 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Dashboard.php(75): CodeIgniter\Model->update()
+#8 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Dashboard->fetchFromAPI('1')
+#9 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#10 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#12 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#13 {main}
+ERROR - 2021-04-02 10:02:13 --> mysqli_sql_exception: Unknown column 'statusDashboard' in 'field list' in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:314
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(314): mysqli->query('UPDATE `user` S...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `user` S...')
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `user` S...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(2468): CodeIgniter\Database\BaseConnection->query('UPDATE `user` S...', Array, false)
+#4 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Model.php(353): CodeIgniter\Database\BaseBuilder->update()
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/BaseModel.php(901): CodeIgniter\Model->doUpdate(NULL, Array)
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Model.php(737): CodeIgniter\BaseModel->update(NULL, Array)
+#7 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Dashboard.php(75): CodeIgniter\Model->update()
+#8 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Dashboard->fetchFromAPI('1')
+#9 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#10 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#12 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#13 {main}
+ERROR - 2021-04-02 10:27:29 --> mysqli_sql_exception: Unknown column 'statusDashboard' in 'field list' in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:314
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(314): mysqli->query('UPDATE `user` S...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `user` S...')
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `user` S...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(2468): CodeIgniter\Database\BaseConnection->query('UPDATE `user` S...', Array, false)
+#4 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Model.php(353): CodeIgniter\Database\BaseBuilder->update()
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/BaseModel.php(901): CodeIgniter\Model->doUpdate(NULL, Array)
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Model.php(737): CodeIgniter\BaseModel->update(NULL, Array)
+#7 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Dashboard.php(75): CodeIgniter\Model->update()
+#8 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Dashboard->fetchFromAPI('1')
+#9 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#10 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#12 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#13 {main}
+ERROR - 2021-04-02 10:28:05 --> mysqli_sql_exception: Unknown column 'statusReporting' in 'field list' in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:314
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(314): mysqli->query('UPDATE `user` S...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `user` S...')
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `user` S...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(2468): CodeIgniter\Database\BaseConnection->query('UPDATE `user` S...', Array, false)
+#4 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Model.php(353): CodeIgniter\Database\BaseBuilder->update()
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/BaseModel.php(901): CodeIgniter\Model->doUpdate(NULL, Array)
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Model.php(737): CodeIgniter\BaseModel->update(NULL, Array)
+#7 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Reporting.php(101): CodeIgniter\Model->update()
+#8 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Reporting->fetchFromAPI('1')
+#9 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reporting))
+#10 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#12 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#13 {main}
+ERROR - 2021-04-02 10:50:55 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '? GROUP BY `campaign_id` ORDER BY `time` ASC' at line 1 in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:314
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(314): mysqli->query('SELECT `campaig...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `campaig...')
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `campaig...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/app/Models/Dashboard_model.php(13): CodeIgniter\Database\BaseConnection->query('SELECT `campaig...', NULL)
+#4 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Dashboard.php(22): App\Models\Dashboard_model->getUserData(NULL)
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Dashboard->index()
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#7 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#9 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#10 {main}
+ERROR - 2021-04-02 10:51:14 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '? GROUP BY `campaign_id` ORDER BY `time` ASC' at line 1 in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:314
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(314): mysqli->query('SELECT `campaig...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `campaig...')
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `campaig...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/app/Models/Dashboard_model.php(13): CodeIgniter\Database\BaseConnection->query('SELECT `campaig...', NULL)
+#4 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Dashboard.php(22): App\Models\Dashboard_model->getUserData(NULL)
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Dashboard->index()
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#7 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#9 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#10 {main}
+ERROR - 2021-04-02 10:51:21 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '? GROUP BY `campaign_id` ORDER BY `time` ASC' at line 1 in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:314
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(314): mysqli->query('SELECT `campaig...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `campaig...')
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `campaig...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/app/Models/Dashboard_model.php(13): CodeIgniter\Database\BaseConnection->query('SELECT `campaig...', NULL)
+#4 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Dashboard.php(22): App\Models\Dashboard_model->getUserData(NULL)
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Dashboard->index()
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#7 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#9 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#10 {main}
+ERROR - 2021-04-02 10:51:46 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '? GROUP BY `campaign_id` ORDER BY `time` ASC' at line 1 in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:314
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(314): mysqli->query('SELECT `campaig...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `campaig...')
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `campaig...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/app/Models/Dashboard_model.php(13): CodeIgniter\Database\BaseConnection->query('SELECT `campaig...', NULL)
+#4 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Dashboard.php(22): App\Models\Dashboard_model->getUserData(NULL)
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Dashboard->index()
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#7 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#9 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#10 {main}
+ERROR - 2021-04-02 10:53:09 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '? GROUP BY `campaign_id` ORDER BY `time` ASC' at line 1 in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:314
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(314): mysqli->query('SELECT `campaig...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `campaig...')
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `campaig...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/app/Models/Dashboard_model.php(13): CodeIgniter\Database\BaseConnection->query('SELECT `campaig...', NULL)
+#4 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Dashboard.php(22): App\Models\Dashboard_model->getUserData(NULL)
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Dashboard->index()
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#7 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#9 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#10 {main}
+ERROR - 2021-04-02 10:53:31 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '? GROUP BY `campaign_id` ORDER BY `time` ASC' at line 1 in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:314
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(314): mysqli->query('SELECT `campaig...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `campaig...')
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `campaig...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/app/Models/Dashboard_model.php(13): CodeIgniter\Database\BaseConnection->query('SELECT `campaig...', NULL)
+#4 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Dashboard.php(23): App\Models\Dashboard_model->getUserData(NULL)
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Dashboard->index()
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#7 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#9 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#10 {main}
+ERROR - 2021-04-02 10:53:48 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '? GROUP BY `campaign_id` ORDER BY `time` ASC' at line 1 in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:314
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(314): mysqli->query('SELECT `campaig...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `campaig...')
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `campaig...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/app/Models/Dashboard_model.php(13): CodeIgniter\Database\BaseConnection->query('SELECT `campaig...', NULL)
+#4 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Dashboard.php(23): App\Models\Dashboard_model->getUserData(NULL)
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Dashboard->index()
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#7 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#9 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#10 {main}
+ERROR - 2021-04-02 10:54:19 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '? GROUP BY `campaign_id` ORDER BY `time` ASC' at line 1 in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:314
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(314): mysqli->query('SELECT `campaig...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `campaig...')
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `campaig...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/app/Models/Dashboard_model.php(13): CodeIgniter\Database\BaseConnection->query('SELECT `campaig...', NULL)
+#4 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Dashboard.php(23): App\Models\Dashboard_model->getUserData(NULL)
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Dashboard->index()
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#7 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#9 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#10 {main}
+ERROR - 2021-04-02 10:55:13 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '? GROUP BY `campaign_id` ORDER BY `time` ASC' at line 1 in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:314
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(314): mysqli->query('SELECT `campaig...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `campaig...')
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `campaig...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/app/Models/Dashboard_model.php(13): CodeIgniter\Database\BaseConnection->query('SELECT `campaig...', NULL)
+#4 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Dashboard.php(23): App\Models\Dashboard_model->getUserData(NULL)
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Dashboard->index()
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#7 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#9 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#10 {main}
+ERROR - 2021-04-02 10:55:21 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '? GROUP BY `campaign_id` ORDER BY `time` ASC' at line 1 in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:314
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(314): mysqli->query('SELECT `campaig...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `campaig...')
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `campaig...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/app/Models/Dashboard_model.php(13): CodeIgniter\Database\BaseConnection->query('SELECT `campaig...', NULL)
+#4 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Dashboard.php(23): App\Models\Dashboard_model->getUserData(NULL)
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Dashboard->index()
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#7 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#9 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#10 {main}
+ERROR - 2021-04-02 10:55:57 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '? GROUP BY `campaign_id` ORDER BY `time` ASC' at line 1 in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:314
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(314): mysqli->query('SELECT `campaig...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `campaig...')
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `campaig...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/app/Models/Dashboard_model.php(13): CodeIgniter\Database\BaseConnection->query('SELECT `campaig...', NULL)
+#4 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Dashboard.php(23): App\Models\Dashboard_model->getUserData(NULL)
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Dashboard->index()
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#7 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#9 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#10 {main}
+ERROR - 2021-04-02 10:57:53 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '? GROUP BY `campaign_id` ORDER BY `time` ASC' at line 1 in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:314
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(314): mysqli->query('SELECT `campaig...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `campaig...')
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `campaig...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/app/Models/Dashboard_model.php(13): CodeIgniter\Database\BaseConnection->query('SELECT `campaig...', NULL)
+#4 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Dashboard.php(23): App\Models\Dashboard_model->getUserData(NULL)
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Dashboard->index()
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#7 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#9 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#10 {main}
+ERROR - 2021-04-02 10:58:20 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '? GROUP BY `campaign_id` ORDER BY `time` ASC' at line 1 in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:314
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(314): mysqli->query('SELECT `campaig...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `campaig...')
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `campaig...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/app/Models/Dashboard_model.php(14): CodeIgniter\Database\BaseConnection->query('SELECT `campaig...', NULL)
+#4 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Dashboard.php(22): App\Models\Dashboard_model->getUserData(NULL)
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Dashboard->index()
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#7 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#9 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#10 {main}
+ERROR - 2021-04-02 10:59:43 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '? GROUP BY `campaign_id` ORDER BY `time` ASC' at line 1 in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:314
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(314): mysqli->query('SELECT `campaig...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `campaig...')
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `campaig...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/app/Models/Dashboard_model.php(14): CodeIgniter\Database\BaseConnection->query('SELECT `campaig...', NULL)
+#4 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Dashboard.php(22): App\Models\Dashboard_model->getUserData(NULL)
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Dashboard->index()
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#7 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#9 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#10 {main}
+ERROR - 2021-04-02 10:59:50 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '? GROUP BY `campaign_id` ORDER BY `time` ASC' at line 1 in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:314
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(314): mysqli->query('SELECT `campaig...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `campaig...')
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `campaig...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/app/Models/Dashboard_model.php(14): CodeIgniter\Database\BaseConnection->query('SELECT `campaig...', NULL)
+#4 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Dashboard.php(22): App\Models\Dashboard_model->getUserData(NULL)
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Dashboard->index()
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#7 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#9 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#10 {main}
+ERROR - 2021-04-02 11:04:39 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '? GROUP BY `campaign_id` ORDER BY `time` ASC' at line 1 in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:314
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(314): mysqli->query('SELECT `campaig...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `campaig...')
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `campaig...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/app/Models/Dashboard_model.php(13): CodeIgniter\Database\BaseConnection->query('SELECT `campaig...', NULL)
+#4 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Dashboard.php(22): App\Models\Dashboard_model->getUserData(NULL)
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Dashboard->index()
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#7 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#9 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#10 {main}
+ERROR - 2021-04-02 11:05:28 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '? GROUP BY `campaign_id` ORDER BY `time` ASC' at line 1 in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:314
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(314): mysqli->query('SELECT `campaig...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `campaig...')
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `campaig...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/app/Models/Dashboard_model.php(13): CodeIgniter\Database\BaseConnection->query('SELECT `campaig...', NULL)
+#4 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Dashboard.php(22): App\Models\Dashboard_model->getUserData(NULL)
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Dashboard->index()
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#7 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#9 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#10 {main}
+ERROR - 2021-04-02 11:06:28 --> mysqli_sql_exception: Unknown column 'undefined' in 'where clause' in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:314
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(314): mysqli->query('SELECT inventor...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('SELECT inventor...')
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT inventor...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/app/Models/Reporting_model.php(19): CodeIgniter\Database\BaseConnection->query('SELECT inventor...')
+#4 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Reporting.php(33): App\Models\Reporting_model->getInventoryName('undefined')
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Reporting->getCampaignInformation('undefined', 'undefined')
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reporting))
+#7 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#9 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#10 {main}
+ERROR - 2021-04-02 11:06:28 --> mysqli_sql_exception: Unknown column 'undefined' in 'where clause' in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:314
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(314): mysqli->query('SELECT report.*...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('SELECT report.*...')
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT report.*...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/app/Models/Reporting_model.php(25): CodeIgniter\Database\BaseConnection->query('SELECT report.*...')
+#4 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Reporting.php(34): App\Models\Reporting_model->getCreativeName('undefined')
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Reporting->getCampaignInformation('undefined', 'undefined')
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reporting))
+#7 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#9 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#10 {main}
+ERROR - 2021-04-02 11:06:28 --> mysqli_sql_exception: Unknown column 'undefined' in 'where clause' in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:314
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(314): mysqli->query('SELECT * from d...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('SELECT * from d...')
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT * from d...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/app/Models/Reporting_model.php(31): CodeIgniter\Database\BaseConnection->query('SELECT * from d...')
+#4 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Reporting.php(35): App\Models\Reporting_model->getCampaignInformation('undefined')
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Reporting->getCampaignInformation('undefined', 'undefined')
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reporting))
+#7 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#9 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#10 {main}
+ERROR - 2021-04-02 11:06:28 --> mysqli_sql_exception: Unknown column 'undefined' in 'where clause' in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:314
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(314): mysqli->query('SELECT exchange...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('SELECT exchange...')
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT exchange...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/app/Models/Reporting_model.php(37): CodeIgniter\Database\BaseConnection->query('SELECT exchange...')
+#4 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Reporting.php(36): App\Models\Reporting_model->getExchangeName('undefined')
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Reporting->getCampaignInformation('undefined', 'undefined')
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reporting))
+#7 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#9 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#10 {main}
+ERROR - 2021-04-02 11:06:28 --> mysqli_sql_exception: Unknown column 'undefined' in 'where clause' in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:314
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(314): mysqli->query('SELECT creative...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('SELECT creative...')
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT creative...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/app/Models/Reporting_model.php(43): CodeIgniter\Database\BaseConnection->query('SELECT creative...')
+#4 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Reporting.php(37): App\Models\Reporting_model->getAdSize('undefined')
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Reporting->getCampaignInformation('undefined', 'undefined')
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reporting))
+#7 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#9 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#10 {main}
+ERROR - 2021-04-02 11:07:15 --> mysqli_sql_exception: Unknown column 'undefined' in 'where clause' in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:314
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(314): mysqli->query('SELECT inventor...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('SELECT inventor...')
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT inventor...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/app/Models/Reporting_model.php(19): CodeIgniter\Database\BaseConnection->query('SELECT inventor...')
+#4 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Reporting.php(33): App\Models\Reporting_model->getInventoryName('undefined')
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Reporting->getCampaignInformation('undefined', 'undefined')
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reporting))
+#7 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#9 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#10 {main}
+ERROR - 2021-04-02 11:07:15 --> mysqli_sql_exception: Unknown column 'undefined' in 'where clause' in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:314
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(314): mysqli->query('SELECT report.*...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('SELECT report.*...')
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT report.*...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/app/Models/Reporting_model.php(25): CodeIgniter\Database\BaseConnection->query('SELECT report.*...')
+#4 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Reporting.php(34): App\Models\Reporting_model->getCreativeName('undefined')
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Reporting->getCampaignInformation('undefined', 'undefined')
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reporting))
+#7 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#9 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#10 {main}
+ERROR - 2021-04-02 11:07:15 --> mysqli_sql_exception: Unknown column 'undefined' in 'where clause' in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:314
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(314): mysqli->query('SELECT * from d...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('SELECT * from d...')
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT * from d...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/app/Models/Reporting_model.php(31): CodeIgniter\Database\BaseConnection->query('SELECT * from d...')
+#4 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Reporting.php(35): App\Models\Reporting_model->getCampaignInformation('undefined')
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Reporting->getCampaignInformation('undefined', 'undefined')
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reporting))
+#7 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#9 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#10 {main}
+ERROR - 2021-04-02 11:07:15 --> mysqli_sql_exception: Unknown column 'undefined' in 'where clause' in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:314
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(314): mysqli->query('SELECT exchange...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('SELECT exchange...')
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT exchange...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/app/Models/Reporting_model.php(37): CodeIgniter\Database\BaseConnection->query('SELECT exchange...')
+#4 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Reporting.php(36): App\Models\Reporting_model->getExchangeName('undefined')
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Reporting->getCampaignInformation('undefined', 'undefined')
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reporting))
+#7 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#9 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#10 {main}
+ERROR - 2021-04-02 11:07:15 --> mysqli_sql_exception: Unknown column 'undefined' in 'where clause' in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:314
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(314): mysqli->query('SELECT creative...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('SELECT creative...')
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT creative...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/app/Models/Reporting_model.php(43): CodeIgniter\Database\BaseConnection->query('SELECT creative...')
+#4 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Reporting.php(37): App\Models\Reporting_model->getAdSize('undefined')
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Reporting->getCampaignInformation('undefined', 'undefined')
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reporting))
+#7 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#9 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#10 {main}
+ERROR - 2021-04-02 11:16:21 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'where `email`=$email' at line 1 in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:314
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(314): mysqli->query('SELECT inventor...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('SELECT inventor...')
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT inventor...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/app/Models/Reporting_model.php(20): CodeIgniter\Database\BaseConnection->query('SELECT inventor...', NULL)
+#4 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Reporting.php(34): App\Models\Reporting_model->getInventoryName('28881', NULL)
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Reporting->getCampaignInformation('28881', '1')
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reporting))
+#7 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#9 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#10 {main}
+ERROR - 2021-04-02 11:16:58 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'where `email`=$email' at line 1 in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:314
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(314): mysqli->query('SELECT inventor...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('SELECT inventor...')
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT inventor...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/app/Models/Reporting_model.php(20): CodeIgniter\Database\BaseConnection->query('SELECT inventor...', NULL)
+#4 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Reporting.php(34): App\Models\Reporting_model->getInventoryName('28881', NULL)
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Reporting->getCampaignInformation('28881', '1')
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reporting))
+#7 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#9 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#10 {main}
+ERROR - 2021-04-02 11:17:35 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'where `email`=$email' at line 1 in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:314
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(314): mysqli->query('SELECT inventor...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('SELECT inventor...')
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT inventor...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/app/Models/Reporting_model.php(20): CodeIgniter\Database\BaseConnection->query('SELECT inventor...', NULL)
+#4 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Reporting.php(34): App\Models\Reporting_model->getInventoryName('28881', NULL)
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Reporting->getCampaignInformation('28881', '1')
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reporting))
+#7 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#9 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#10 {main}
+ERROR - 2021-04-02 11:20:01 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'where `email`=cm1056@certismedia.com' at line 1 in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:314
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(314): mysqli->query('SELECT `invento...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `invento...')
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `invento...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/app/Models/Reporting_model.php(20): CodeIgniter\Database\BaseConnection->query('SELECT `invento...', NULL)
+#4 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Reporting.php(34): App\Models\Reporting_model->getInventoryName('28881', NULL)
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Reporting->getCampaignInformation('28881', '1')
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reporting))
+#7 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#9 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#10 {main}
+ERROR - 2021-04-02 11:20:11 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'where `email`=`cm1056@certismedia.com`' at line 1 in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:314
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(314): mysqli->query('SELECT `invento...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `invento...')
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `invento...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/app/Models/Reporting_model.php(20): CodeIgniter\Database\BaseConnection->query('SELECT `invento...', NULL)
+#4 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Reporting.php(34): App\Models\Reporting_model->getInventoryName('28881', NULL)
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Reporting->getCampaignInformation('28881', '1')
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reporting))
+#7 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#9 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#10 {main}
+ERROR - 2021-04-02 11:21:04 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'where a.email=' at line 1 in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:314
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(314): mysqli->query('SELECT inventor...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('SELECT inventor...')
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT inventor...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/app/Models/Reporting_model.php(19): CodeIgniter\Database\BaseConnection->query('SELECT inventor...')
+#4 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Reporting.php(34): App\Models\Reporting_model->getInventoryName('28881', NULL)
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Reporting->getCampaignInformation('28881', '1')
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reporting))
+#7 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#9 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#10 {main}
+CRITICAL - 2021-04-02 11:22:32 --> Call to undefined method CodeIgniter\Database\MySQLi\Result::where()
+#0 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Reporting.php(34): App\Models\Reporting_model->getInventoryName('28881', NULL)
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Reporting->getCampaignInformation('28881', '1')
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reporting))
+#3 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#6 {main}
+CRITICAL - 2021-04-02 11:22:44 --> Call to undefined method CodeIgniter\Database\MySQLi\Result::where()
+#0 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Reporting.php(34): App\Models\Reporting_model->getInventoryName('28881', NULL)
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Reporting->getCampaignInformation('28881', '1')
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reporting))
+#3 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#6 {main}
+CRITICAL - 2021-04-02 11:22:59 --> Call to undefined method CodeIgniter\Database\MySQLi\Result::where()
+#0 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Reporting.php(34): App\Models\Reporting_model->getInventoryName('28881', NULL)
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Reporting->getCampaignInformation('28881', '1')
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reporting))
+#3 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#6 {main}
+CRITICAL - 2021-04-02 11:23:08 --> Call to undefined method CodeIgniter\Database\MySQLi\Result::where()
+#0 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Reporting.php(34): App\Models\Reporting_model->getInventoryName('28881', NULL)
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Reporting->getCampaignInformation('28881', '1')
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reporting))
+#3 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#6 {main}
+CRITICAL - 2021-04-02 11:23:21 --> Call to undefined method CodeIgniter\Database\MySQLi\Result::where()
+#0 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Reporting.php(34): App\Models\Reporting_model->getInventoryName('28881', NULL)
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Reporting->getCampaignInformation('28881', '1')
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reporting))
+#3 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#6 {main}
+CRITICAL - 2021-04-02 11:23:28 --> Call to undefined method CodeIgniter\Database\MySQLi\Result::where()
+#0 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Reporting.php(34): App\Models\Reporting_model->getInventoryName('28881', NULL)
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Reporting->getCampaignInformation('28881', '1')
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reporting))
+#3 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#6 {main}
+ERROR - 2021-04-02 11:59:14 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1 in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:314
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(314): mysqli->query('SELECT inventor...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('SELECT inventor...')
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT inventor...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/app/Models/Reporting_model.php(19): CodeIgniter\Database\BaseConnection->query('SELECT inventor...')
+#4 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Reporting.php(34): App\Models\Reporting_model->getInventoryName('28881', NULL)
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Reporting->getCampaignInformation('28881', '1')
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reporting))
+#7 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#9 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#10 {main}
+ERROR - 2021-04-02 11:59:27 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1 in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:314
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(314): mysqli->query('SELECT inventor...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('SELECT inventor...')
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT inventor...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/app/Models/Reporting_model.php(20): CodeIgniter\Database\BaseConnection->query('SELECT inventor...')
+#4 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Reporting.php(34): App\Models\Reporting_model->getInventoryName('28881', NULL)
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Reporting->getCampaignInformation('28881', '1')
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reporting))
+#7 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#9 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#10 {main}
+ERROR - 2021-04-02 11:59:55 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1 in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:314
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(314): mysqli->query('SELECT inventor...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('SELECT inventor...')
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT inventor...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/app/Models/Reporting_model.php(19): CodeIgniter\Database\BaseConnection->query('SELECT inventor...')
+#4 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Reporting.php(35): App\Models\Reporting_model->getInventoryName('28881', NULL)
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Reporting->getCampaignInformation('28881', '1')
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reporting))
+#7 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#9 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#10 {main}
+ERROR - 2021-04-02 12:00:51 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '@certismedia.com' at line 1 in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:314
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(314): mysqli->query('SELECT inventor...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('SELECT inventor...')
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT inventor...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/app/Models/Reporting_model.php(19): CodeIgniter\Database\BaseConnection->query('SELECT inventor...')
+#4 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Reporting.php(35): App\Models\Reporting_model->getInventoryName('28881', 'cm1056@certisme...')
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Reporting->getCampaignInformation('28881', '1')
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reporting))
+#7 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#9 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#10 {main}
+ERROR - 2021-04-02 12:01:09 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '@certismedia.com' at line 1 in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:314
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(314): mysqli->query('SELECT inventor...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('SELECT inventor...')
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT inventor...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/app/Models/Reporting_model.php(19): CodeIgniter\Database\BaseConnection->query('SELECT inventor...')
+#4 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Reporting.php(34): App\Models\Reporting_model->getInventoryName('28881', 'cm1056@certisme...')
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Reporting->getCampaignInformation('28881', '1')
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reporting))
+#7 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#9 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#10 {main}
+ERROR - 2021-04-02 12:01:47 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '@certismedia.com' at line 1 in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:314
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(314): mysqli->query('SELECT inventor...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('SELECT inventor...')
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT inventor...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/app/Models/Reporting_model.php(19): CodeIgniter\Database\BaseConnection->query('SELECT inventor...')
+#4 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Reporting.php(34): App\Models\Reporting_model->getInventoryName('28881', 'cm1056@certisme...')
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Reporting->getCampaignInformation('28881', '1')
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reporting))
+#7 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#9 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#10 {main}
+ERROR - 2021-04-02 12:02:39 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '@certismedia.com' at line 1 in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:314
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(314): mysqli->query('SELECT inventor...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('SELECT inventor...')
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT inventor...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/app/Models/Reporting_model.php(19): CodeIgniter\Database\BaseConnection->query('SELECT inventor...')
+#4 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Reporting.php(34): App\Models\Reporting_model->getInventoryName('28881', 'cm1056@certisme...')
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Reporting->getCampaignInformation('28881', '1')
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reporting))
+#7 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#9 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#10 {main}
+ERROR - 2021-04-02 12:03:04 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '@certismedia.com' at line 1 in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:314
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(314): mysqli->query('SELECT inventor...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('SELECT inventor...')
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT inventor...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/app/Models/Reporting_model.php(20): CodeIgniter\Database\BaseConnection->query('SELECT inventor...')
+#4 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Reporting.php(34): App\Models\Reporting_model->getInventoryName('28881', 'cm1056@certisme...')
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Reporting->getCampaignInformation('28881', '1')
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reporting))
+#7 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#9 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#10 {main}
+ERROR - 2021-04-02 12:04:44 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '? or `email`=? GROUP BY `campaign_id` ORDER BY `time` ASC' at line 1 in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:314
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(314): mysqli->query('SELECT `id`, `c...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `c...')
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `c...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/app/Models/Reporting_model.php(20): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `c...', 'cm1056@certisme...')
+#4 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Reporting.php(34): App\Models\Reporting_model->getInventoryName('28881', 'cm1056@certisme...')
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Reporting->getCampaignInformation('28881', '1')
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reporting))
+#7 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#9 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#10 {main}
+ERROR - 2021-04-02 12:05:20 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '? or `email`=? GROUP BY `campaign_id` ORDER BY `time` ASC' at line 1 in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:314
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(314): mysqli->query('SELECT `id`, `c...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `c...')
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `c...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/app/Models/Reporting_model.php(20): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `c...', '28881', true)
+#4 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Reporting.php(34): App\Models\Reporting_model->getInventoryName('28881', 'cm1056@certisme...')
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Reporting->getCampaignInformation('28881', '1')
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reporting))
+#7 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#9 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#10 {main}
+ERROR - 2021-04-02 12:15:35 --> mysqli_sql_exception: Unknown column 'a.email' in 'where clause' in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:314
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(314): mysqli->query('SELECT inventor...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('SELECT inventor...')
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT inventor...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/app/Models/Reporting_model.php(22): CodeIgniter\Database\BaseConnection->query('SELECT inventor...')
+#4 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Reporting.php(34): App\Models\Reporting_model->getInventoryName('28881', 'cm1056@certisme...')
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Reporting->getCampaignInformation('28881', '1')
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reporting))
+#7 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#9 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#10 {main}
+ERROR - 2021-04-02 12:16:03 --> mysqli_sql_exception: Unknown column 'a.email' in 'where clause' in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:314
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(314): mysqli->query('SELECT inventor...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('SELECT inventor...')
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT inventor...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/app/Models/Reporting_model.php(22): CodeIgniter\Database\BaseConnection->query('SELECT inventor...')
+#4 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Reporting.php(34): App\Models\Reporting_model->getInventoryName('28881', 'cm1056@certisme...')
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Reporting->getCampaignInformation('28881', '1')
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reporting))
+#7 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#9 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#10 {main}
+ERROR - 2021-04-02 12:17:42 --> mysqli_sql_exception: Unknown column '$email' in 'where clause' in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:314
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(314): mysqli->query('SELECT `id`, `c...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `c...')
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `c...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/app/Models/Reporting_model.php(20): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `c...', '28881', true)
+#4 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Reporting.php(34): App\Models\Reporting_model->getInventoryName('28881', 'cm1056@certisme...')
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Reporting->getCampaignInformation('28881', '1')
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reporting))
+#7 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#9 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#10 {main}
+ERROR - 2021-04-02 12:18:10 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '? or `email`=? GROUP BY `campaign_id` ORDER BY `time` ASC' at line 1 in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:314
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(314): mysqli->query('SELECT `id`, `c...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `c...')
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `c...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/app/Models/Reporting_model.php(20): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `c...', '28881', true)
+#4 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Reporting.php(34): App\Models\Reporting_model->getInventoryName('28881', 'cm1056@certisme...')
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Reporting->getCampaignInformation('28881', '1')
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reporting))
+#7 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#9 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#10 {main}
+ERROR - 2021-04-02 12:18:51 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '? or `email`=:email: GROUP BY `campaign_id` ORDER BY `time` ASC' at line 1 in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:314
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(314): mysqli->query('SELECT `id`, `c...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `c...')
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `c...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/app/Models/Reporting_model.php(20): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `c...', '28881', true)
+#4 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Reporting.php(34): App\Models\Reporting_model->getInventoryName('28881', 'cm1056@certisme...')
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Reporting->getCampaignInformation('28881', '1')
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reporting))
+#7 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#9 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#10 {main}
+ERROR - 2021-04-02 12:20:53 --> mysqli_sql_exception: Unknown column 'a.campaign_id' in 'where clause' in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:314
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(314): mysqli->query('SELECT `id`, `c...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `c...')
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `c...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/app/Models/Reporting_model.php(20): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `c...', Array)
+#4 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Reporting.php(34): App\Models\Reporting_model->getInventoryName('28881', 'cm1056@certisme...')
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Reporting->getCampaignInformation('28881', '1')
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reporting))
+#7 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#9 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#10 {main}
+ERROR - 2021-04-02 12:28:39 --> mysqli_sql_exception: Unknown column 'creative_name' in 'field list' in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:314
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(314): mysqli->query('SELECT `id`, `c...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `c...')
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `c...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/app/Models/Reporting_model.php(38): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `c...', Array)
+#4 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Reporting.php(36): App\Models\Reporting_model->getCampaignInformation('28881', 'cm1056@certisme...')
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Reporting->getCampaignInformation('28881', '1')
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reporting))
+#7 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#9 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#10 {main}
+ERROR - 2021-04-02 12:36:09 --> mysqli_sql_exception: Unknown column 'creative_name' in 'field list' in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:314
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(314): mysqli->query('SELECT `id`, `c...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `c...')
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `c...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/app/Models/Reporting_model.php(37): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `c...')
+#4 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Reporting.php(36): App\Models\Reporting_model->getCampaignInformation('28881', 'cm1056@certisme...')
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Reporting->getCampaignInformation('28881', '1')
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reporting))
+#7 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#9 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#10 {main}
+ERROR - 2021-04-02 13:27:03 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '? GROUP BY `campaign_id` ORDER BY `time` ASC' at line 1 in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:314
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(314): mysqli->query('SELECT `id`, `c...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `c...')
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `c...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/app/Models/Reporting_model.php(38): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `c...', Array)
+#4 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Reporting.php(36): App\Models\Reporting_model->getCampaignInformation('28881', 'cm1056@certisme...')
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Reporting->getCampaignInformation('28881', '1')
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reporting))
+#7 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#9 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#10 {main}
+ERROR - 2021-04-02 13:27:20 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '? GROUP BY `campaign_id` ORDER BY `time` ASC' at line 1 in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:314
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(314): mysqli->query('SELECT `id`, `c...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `c...')
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `c...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/app/Models/Reporting_model.php(38): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `c...', Array)
+#4 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Reporting.php(36): App\Models\Reporting_model->getCampaignInformation('28881', 'cm1056@certisme...')
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Reporting->getCampaignInformation('28881', '1')
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reporting))
+#7 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#9 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#10 {main}
+ERROR - 2021-04-02 13:32:52 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '@certismedia.com GROUP BY exchange_name' at line 1 in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:314
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(314): mysqli->query('SELECT exchange...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('SELECT exchange...')
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT exchange...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/app/Models/Reporting_model.php(46): CodeIgniter\Database\BaseConnection->query('SELECT exchange...')
+#4 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Reporting.php(37): App\Models\Reporting_model->getExchangeName('28881', 'cm1056@certisme...')
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Reporting->getCampaignInformation('28881', '1')
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reporting))
+#7 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#9 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#10 {main}
+ERROR - 2021-04-02 13:33:06 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '@certismedia.com GROUP BY exchange_name' at line 1 in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:314
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(314): mysqli->query('SELECT exchange...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('SELECT exchange...')
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT exchange...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/app/Models/Reporting_model.php(46): CodeIgniter\Database\BaseConnection->query('SELECT exchange...')
+#4 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Reporting.php(37): App\Models\Reporting_model->getExchangeName('28881', 'cm1056@certisme...')
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Reporting->getCampaignInformation('28881', '1')
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reporting))
+#7 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#9 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#10 {main}
+ERROR - 2021-04-02 14:08:33 --> mysqli_sql_exception: Unknown column 'statusDashboard' in 'field list' in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:314
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(314): mysqli->query('UPDATE `user` S...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `user` S...')
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `user` S...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(2468): CodeIgniter\Database\BaseConnection->query('UPDATE `user` S...', Array, false)
+#4 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Model.php(353): CodeIgniter\Database\BaseBuilder->update()
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/BaseModel.php(901): CodeIgniter\Model->doUpdate(NULL, Array)
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Model.php(737): CodeIgniter\BaseModel->update(NULL, Array)
+#7 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Dashboard.php(77): CodeIgniter\Model->update()
+#8 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Dashboard->fetchFromAPI('1')
+#9 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#10 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#12 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#13 {main}
+ERROR - 2021-04-02 14:09:09 --> mysqli_sql_exception: Unknown column 'statusReporting' in 'field list' in /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:314
+Stack trace:
+#0 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(314): mysqli->query('UPDATE `user` S...')
+#1 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `user` S...')
+#2 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `user` S...')
+#3 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(2468): CodeIgniter\Database\BaseConnection->query('UPDATE `user` S...', Array, false)
+#4 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Model.php(353): CodeIgniter\Database\BaseBuilder->update()
+#5 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/BaseModel.php(901): CodeIgniter\Model->doUpdate(NULL, Array)
+#6 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Model.php(737): CodeIgniter\BaseModel->update(NULL, Array)
+#7 /Users/mohammadsulthan/Projects/certismedia-api/app/Controllers/Reporting.php(102): CodeIgniter\Model->update()
+#8 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(936): App\Controllers\Reporting->fetchFromAPI('1')
+#9 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reporting))
+#10 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 /Users/mohammadsulthan/Projects/certismedia-api/public/index.php(50): CodeIgniter\CodeIgniter->run()
+#12 /Users/mohammadsulthan/Projects/certismedia-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/mohammad...')
+#13 {main}

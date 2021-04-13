@@ -34,13 +34,15 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 $routes->post('/login', 'Authentication::login');
-$routes->post('/register', 'Authentication::register');
-
+$routes->post('/signup', 'Register::signup');
+$routes->options('(:any)', 'Home::options'); //one options method for all routes
 $routes->resource('dashboard');
 $routes->resource('reporting');
 
-// CLI Routes
-// $routes->cli('')
+$routes->get('fetch-report/(:any)', 'Reporting::fetchFromAPI/$1');
+$routes->get('fetch-dashboard/(:any)', 'Dashboard::fetchFromAPI/$1');
+$routes->get('fetch-daily-delivery', 'Reporting::fetchDailyDelivery');
+
 
 /*
  * --------------------------------------------------------------------
