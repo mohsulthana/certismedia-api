@@ -150,7 +150,7 @@ class Reporting extends ResourceController
         $response = $this->connectAPI($tmp_url, $offset, $limit, $user['API']);
         if($response == null) {
           //failed connect API
-          $usersModel->set(['statusReporting' => 3])->where('email', $user['email'])->update();
+          // $usersModel->set(['statusReporting' => 3])->where('email', $user['email'])->update();
           return 'failed connect API';
         }
 
