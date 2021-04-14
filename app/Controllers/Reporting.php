@@ -45,7 +45,7 @@ class Reporting extends ResourceController
     $client = \Config\Services::curlrequest();
     $usersModel = new User_model();
     $reportingModel = new Reporting_model();
-    
+
     if($id_user != null) {
       $users[0] = $usersModel->find($id_user);
       if($users[0] == null) {
@@ -54,11 +54,11 @@ class Reporting extends ResourceController
     } else  {
       $users = $usersModel->findAll();
     }
-      
-    $day  = date('Y-m-d', strtotime("-7 days"));
+
+    $day  = date('Y-m-d', strtotime("yesterday"));
     $url = "https://reporting.smadex.com/api/v2/performance?dimensions=campaign_id,creative_id,creative_name,creative_size,inventory_id,inventory_name,exchange_name&metrics=impressions,clicks,winrate,views,completed_views&startdate=$day&granularity=day";
 
-    try {      
+    try {
       foreach ($users as $user) {
         $response = $client->request('GET', $url, [
           'headers' => [
@@ -111,7 +111,7 @@ class Reporting extends ResourceController
     $client = \Config\Services::curlrequest();
     $usersModel = new User_model();
     $dailyDeliveryModel = new Daily_delivery();
-    
+
     if($emailParam != null && $passParam != null) {
       $users[0] = [
         'email' => $emailParam,
@@ -120,7 +120,7 @@ class Reporting extends ResourceController
     } else  {
       $users = $usersModel->findAll();
     }
-    
+
     $day  = date('Y-m-d', strtotime("-7 days"));
     $url = "https://reporting.smadex.com/api/v2/performance?dimensions=campaign_id&metrics=impressions,clicks,winrate,views,completed_views&startdate=$day&granularity=day";
 
