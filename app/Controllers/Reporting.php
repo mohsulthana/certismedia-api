@@ -125,42 +125,47 @@ class Reporting extends ResourceController
     return 'success';
   }
 
-  public function fetchDailyDelivery($emailParam = null, $passParam = null)
+  public function fetchDailyDelivery($id_user = null)
   {
-    $client = \Config\Services::curlrequest();
     $usersModel = new User_model();
-    $dailyDeliveryModel = new Daily_delivery();
+    $dailyDeliveryModel = new Reporting_model();
+    $limit = 500;
 
-    if($emailParam != null && $passParam != null) {
-      $users[0] = [
-        'email' => $emailParam,
-        'API' => base64_encode($emailParam.':'.$passParam),
-      ];
+    if($id_user != null) {
+      $users[0] = $usersModel->find($id_user);
+      if($users[0] == null) {
+        return $this->failResourceExists("Invalid Account");
+      }
     } else  {
       $users = $usersModel->findAll();
     }
 
-    $day  = date('Y-m-d', strtotime("-7 days"));
+    $day  = date('Y-m-d', strtotime("yesterday"));
     $url = "https://reporting.smadex.com/api/v2/performance?dimensions=campaign_id&metrics=impressions,clicks,winrate,views,completed_views&startdate=$day&granularity=day";
 
-    try {
-      foreach ($users as $user) {
-        $response = $client->request('GET', $url, [
-          'headers' => [
-            'Accept'     => 'application/json',
-            'Authorization' => 'Basic '.$user['API']
-          ],
-          'connect_timeout' => 0
-        ]);
-        $daily_delivery = [];
+    foreach ($users as $user) {
+      for($offset=1; $offset<9999999; $offset++) {
+        $tmp_url = $url.'&offset='.$offset.'&limit='.$limit;
+
+        $response = $this->connectAPI($tmp_url, $offset, $limit, $user['API']);
+        if($response == null) {
+          //failed connect API
+          $usersModel->set(['statusReporting' => 3])->where('email', $user['email'])->update();
+          return 'failed connect API';
+        }
+
         $data = json_decode($response->getBody());
+        if($data == null) {
+          //fetch selesai
+          // if($user['statusReporting'] != 1) {
+          //   $usersModel->set(['statusReporting' => 1])->where('email', $user['email'])->update();
+          // }
+          return 'success fetch';
+        }
 
+        //input data ke DB
+        $dataInput = [];
         foreach ($data as $key => $value) {
-          $ctr = 0;
-          if ($value->clicks > 0 && $value->impressions > 0) {
-            $ctr = $value->clicks / $value->impressions;
-          }
-
           $tmp = [
             'campaign_id' => $value->campaign_id,
             'impression' => $value->impressions,
@@ -168,16 +173,13 @@ class Reporting extends ResourceController
             'view' => $value->views,
             'completed_view' => $value->completed_views,
             'win_rate'  => $value->winrate,
-            'ctr' => $ctr,
             'time'  => $value->time
           ];
-          array_push($daily_delivery, $tmp);
+          array_push($dataInput, $tmp);
         }
-        $dailyDeliveryModel->insertBatch($daily_delivery);
+        $dailyDeliveryModel->insertBatch($dataInput);
       }
-      return 'success';
-    } catch (Exception $e) {
-      die($e->getMessage());
     }
+    return 'success';
   }
 }
