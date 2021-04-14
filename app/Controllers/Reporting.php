@@ -40,11 +40,31 @@ class Reporting extends ResourceController
     return $this->setResponseFormat('json')->respond($data, 200);
   }
 
+  private function connectAPI($url, $offset=1, $limit=500, $credentialAPI, $retryConnect=2)
+  {
+    if($retryConnect <= 0) return null;
+
+    $client = \Config\Services::curlrequest();
+    $response = $client->request('GET', $url, [
+      'headers' => [
+        'Accept'     => 'application/json',
+        'Authorization' => 'Basic '.$credentialAPI
+      ],
+      'connect_timeout' => 0,
+      'http_errors' => false
+    ]);
+    if($response->getStatusCode() >= 400) {
+      //retry connect
+      $response = $this->connectAPI($url, $offset, $limit, $credentialAPI, $retryConnect-1);
+    }
+    return $response;
+  }
+
   public function fetchFromAPI($id_user = null)
   {
-    $client = \Config\Services::curlrequest();
     $usersModel = new User_model();
     $reportingModel = new Reporting_model();
+    $limit = 500;
 
     if($id_user != null) {
       $users[0] = $usersModel->find($id_user);
@@ -58,24 +78,29 @@ class Reporting extends ResourceController
     $day  = date('Y-m-d', strtotime("yesterday"));
     $url = "https://reporting.smadex.com/api/v2/performance?dimensions=campaign_id,creative_id,creative_name,creative_size,inventory_id,inventory_name,exchange_name&metrics=impressions,clicks,winrate,views,completed_views&startdate=$day&granularity=day";
 
-    try {
-      foreach ($users as $user) {
-        $response = $client->request('GET', $url, [
-          'headers' => [
-            'Accept'     => 'application/json',
-            'Authorization' => 'Basic '.$user['API']
-          ],
-          'connect_timeout' => 0
-        ]);
-        $report = [];
+    foreach ($users as $user) {
+      for($offset=1; $offset<9999999; $offset++) {
+        $tmp_url = $url.'&offset='.$offset.'&limit='.$limit;
+
+        $response = $this->connectAPI($tmp_url, $offset, $limit, $user['API']);
+        if($response == null) {
+          //failed connect API
+          $usersModel->set(['statusReporting' => 3])->where('email', $user['email'])->update();
+          return 'failed connect API';
+        }
+
         $data = json_decode($response->getBody());
-
-        foreach ($data as $key => $value) {
-          $ctr = 0;
-          if ($value->clicks > 0 && $value->impressions > 0) {
-            $ctr = $value->clicks / $value->impressions;
+        if($data == null) {
+          //fetch selesai
+          if($user['statusReporting'] != 1) {
+            $usersModel->set(['statusReporting' => 1])->where('email', $user['email'])->update();
           }
+          return 'success fetch';
+        }
 
+        //input data ke DB
+        $dataInput = [];
+        foreach ($data as $key => $value) {
           $tmp = [
             'email'       => $user['email'],
             'campaign_id' => intval($value->campaign_id),
@@ -90,20 +115,14 @@ class Reporting extends ResourceController
             'completed_view' => intval($value->completed_views),
             'click' => floatval($value->clicks),
             'win_rate'  => floatval($value->winrate),
-            'ctr' => floatval($ctr),
             'time'  => intval($value->time)
           ];
-          array_push($report, $tmp);
+          array_push($dataInput, $tmp);
         }
-        $reportingModel->insertBatch($report);
-        if($user['statusReporting'] != 1) {
-          $usersModel->set(['statusReporting' => 1])->where('email', $user['email'])->update();
-        }
+        $reportingModel->insertBatch($dataInput);
       }
-      return 'success';
-    } catch (Exception $e) {
-      die($e->getMessage());
     }
+    return 'success';
   }
 
   public function fetchDailyDelivery($emailParam = null, $passParam = null)
