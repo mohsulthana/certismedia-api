@@ -24,6 +24,61 @@ class Reporting extends ResourceController
     return $this->setResponseFormat('json')->respond($this->model->findAll(), 200);
   }
 
+  //fungsi untuk cronjob
+  public function CreateReportingAsync($id_user=null)
+  {
+    helper('api');
+    $usersModel = new User_model();
+    $user = $usersModel->find($id_user);
+    if($id_user != null) {
+      $users[0] = $usersModel->find($id_user);
+      if($users[0] == null) {
+        return $this->failResourceExists("Invalid Account");
+      }
+    } else  {
+      $users = $usersModel->findAll();
+    }
+
+    foreach ($users as $user) {
+      create_reporting($user['id'], $user['API']);
+    }
+  }
+
+  //fungsi handle callBack url from API
+  public function HandleReport($id_user)
+  {
+    $id = $this->request->getVar('id');
+    $usersModel = new User_model();
+    $user = $usersModel->find($id_user);
+    if($user) {
+      shell_exec('/usr/local/bin/php /home4/fykfaumy/public_html/api/public/index.php Reporting GetReportingAsync "'.$user['email'].'" "'.$id.'" "'.$user['API'].'"> /dev/null &');
+    }
+    echo 'OK';
+  }
+
+  //fungsi untuk get data report dari API dan insert data ke DB
+  public function GetReportingAsync($email=null, $id_report=null, $credentialAPI)
+  {
+    helper('api');
+    $usersModel = new User_model();
+    try {
+      if($id_report != null) {
+        $downloadUrl = get_reporting($credentialAPI, $id_report)->downloadUrl;
+        $data_report = fetch_data($downloadUrl);
+        insertBatchReports($data_report, $email);
+        $usersModel->set(['statusReporting' => 1])->where('email', $email)->update();
+      }
+    } catch(Exception $e) {
+      $data = [
+        'email' => $email,
+        'message' => $e->getMessage()
+      ];
+      $logs_model = new \App\Models\Logs_cronjob_model();
+      $logs_model->insert($data);
+    }
+    echo 'data saved';
+  }
+
   public function getCampaignInformation($campaign, $id)
   {
     $email = $this->request->getGet('email');

@@ -35,6 +35,7 @@ $routes->setAutoRoute(true);
 $routes->get('/', 'Home::index');
 $routes->post('/login', 'Authentication::login');
 $routes->post('/signup', 'Register::signup');
+$routes->post('Reporting/HandleReport/(:any)', 'Reporting::HandleReport/$1');
 $routes->resource('dashboard');
 $routes->resource('reporting');
 
