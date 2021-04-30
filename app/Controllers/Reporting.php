@@ -19,9 +19,22 @@ class Reporting extends ResourceController
 
   public function index()
   {
-    $request = \Config\Services::request();
-    $auth = $request->headers();
-    return $this->setResponseFormat('json')->respond($this->model->findAll(), 200);
+    $reportsModel = new Reporting_model();
+
+    $email = $this->request->getVar('email');
+    $campaign = $this->request->getVar('campaign');
+    print_r($email);
+
+    $creative = $reportsModel->getCreativeName($email);
+    $inventory = $reportsModel->getInventoryName($email);
+    $exchange = $reportsModel->getExchangeName($email);
+    $adSize = $reportsModel->getAdSize($campaign);
+    return $this->respond([$creative, $inventory, $exchange, $adSize], 200);
+  }
+
+  public function show($id = NULL)
+  {
+    return null;
   }
 
   //fungsi untuk cronjob
@@ -131,7 +144,7 @@ class Reporting extends ResourceController
     }
 
     $day  = date('Y-m-d', strtotime("yesterday"));
-    $url = "https://reporting.smadex.com/api/v2/performance?dimensions=campaign_id,creative_id,creative_name,creative_size,inventory_id,inventory_name,exchange_name&metrics=impressions,clicks,winrate,views,completed_views&startdate=$day&granularity=day";
+    $url = "https://reporting.smadex.com/api/v2/performance?dimensions=campaign_id,creative_id,creative_name,creative_size,inventory_id,inventory_name,exchange_name,ad_size&metrics=impressions,clicks,winrate,views,completed_views&startdate=$day&granularity=day";
 
     foreach ($users as $user) {
       for($offset=1; $offset<9999999; $offset++) {
