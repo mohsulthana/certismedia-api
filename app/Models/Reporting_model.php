@@ -11,7 +11,7 @@ class Reporting_model extends Model {
   public function getDashboardData($email)
   {
     // $sql = 'SELECT `id`, `campaign_id`, `creative_name`, `creative_size`, `inventory_name`, `exchange_name`, SUM(`impressions`) as impression, SUM(`clicks`) AS click, SUM(`views`) AS view, SUM(`completed_views`) AS completed_view, `date_time`, SUM(`ctr`) AS ctr FROM `reports` WHERE `email`=?';
-    $sql = 'SELECT `campaign_id`, SUM(`impressions`) as impression, SUM(`clicks`) as click, SUM(`views`) as view, SUM(`completed_views`) as completed_view,  SUM(`ctr`) as ctr FROM `reports` GROUP BY `campaign_id`';
+    $sql = 'SELECT `campaign_id`, SUM(`impressions`) as impression, SUM(`clicks`) as click, SUM(`views`) as view, SUM(`completed_views`) as completed_view,  SUM(`ctr`) as ctr FROM `reports` WHERE `email`=? GROUP BY `campaign_id`';
     $result = $this->db->query($sql, $email);
     return $result->getResultArray();
   }
@@ -19,7 +19,7 @@ class Reporting_model extends Model {
   public function getAllReportData($email)
   {
     // $sql = 'SELECT `id`, `campaign_id`, `creative_name`, `creative_size`, `inventory_name`, `exchange_name`, SUM(`impressions`) as impression, SUM(`clicks`) AS click, SUM(`views`) AS view, SUM(`completed_views`) AS completed_view, `date_time`, SUM(`ctr`) AS ctr FROM `reports` WHERE `email`=?';
-    $sql = 'SELECT `campaign_id`, SUM(`impressions`) as impression, SUM(`clicks`) as click, SUM(`views`) as view, SUM(`completed_views`) as completed_view,  SUM(`ctr`) as ctr FROM `reports` GROUP BY `campaign_id`';
+    $sql = 'SELECT `campaign_id`, SUM(`impressions`) as impression, SUM(`clicks`) as click, SUM(`views`) as view, SUM(`completed_views`) as completed_view,  SUM(`ctr`) as ctr FROM `reports` WHERE `email`=? GROUP BY `campaign_id`';
     $result = $this->db->query($sql, $email);
     return $result->getResultArray();
   }
@@ -27,7 +27,7 @@ class Reporting_model extends Model {
   public function getCreativeName($email)
   {
     // $sql = 'SELECT `id`, `campaign_id`, `creative_name`, `creative_size`, `inventory_name`, `exchange_name`, SUM(`impressions`) as impression, SUM(`clicks`) AS click, SUM(`views`) AS view, SUM(`completed_views`) AS completed_view, `date_time`, SUM(`ctr`) AS ctr FROM `reports` WHERE `email`=?';
-    $sql = 'SELECT SUM(`impressions`) as impression, SUM(`clicks`) as click, SUM(`views`) as view, SUM(`completed_views`) as completed_view,  SUM(`ctr`) as ctr FROM `reports` GROUP BY `creative_id`';
+    $sql = 'SELECT SUM(`impressions`) as impression, SUM(`clicks`) as click, SUM(`views`) as view, SUM(`completed_views`) as completed_view,  SUM(`ctr`) as ctr FROM `reports` WHERE `email`=? GROUP BY `creative_id`';
     $result = $this->db->query($sql, $email);
     return $result->getResultArray();
   }
@@ -35,7 +35,7 @@ class Reporting_model extends Model {
   public function getInventoryName($email)
   {
     // $sql = 'SELECT `id`, `campaign_id`, `creative_name`, `creative_size`, `inventory_name`, `exchange_name`, SUM(`impressions`) as impression, SUM(`clicks`) AS click, SUM(`views`) AS view, SUM(`completed_views`) AS completed_view, `date_time`, SUM(`ctr`) AS ctr FROM `reports` WHERE `email`=?';
-    $sql = 'SELECT SUM(`impressions`) as impression, SUM(`clicks`) as click, SUM(`views`) as view, SUM(`completed_views`) as completed_view,  SUM(`ctr`) as ctr FROM `reports` GROUP BY `inventory_id`';
+    $sql = 'SELECT SUM(`impressions`) as impression, SUM(`clicks`) as click, SUM(`views`) as view, SUM(`completed_views`) as completed_view,  SUM(`ctr`) as ctr FROM `reports` WHERE `email`=? GROUP BY `inventory_id`';
     $result = $this->db->query($sql, $email);
     return $result->getResultArray();
   }
@@ -48,10 +48,10 @@ class Reporting_model extends Model {
     return $result->getResultArray();
   }
 
-  public function getAdSize($campaign)
+  public function getAdSize($campaign, $email)
   {
-    $sql = 'SELECT `creative_size`, COUNT(`impressions`) as total FROM `reports` where `campaign_id`=? GROUP BY `creative_size`';
-    $result = $this->db->query($sql, $campaign);
+    $sql = 'SELECT `creative_size`, COUNT(`impressions`) as total FROM `reports` where `campaign_id`=? AND `email`=? GROUP BY `creative_size`';
+    $result = $this->db->query($sql, [$campaign, $email]);
     return $result->getResultArray();
     // $id = $campaign->campaign;
     // $result = $this->db->query("SELECT creative_size, COUNT(impressions) as total FROM `reports` where campaign_id=$id GROUP BY creative_size")->getResultArray();

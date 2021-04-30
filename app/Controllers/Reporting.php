@@ -23,12 +23,11 @@ class Reporting extends ResourceController
 
     $email = $this->request->getVar('email');
     $campaign = $this->request->getVar('campaign');
-    print_r($email);
 
     $creative = $reportsModel->getCreativeName($email);
     $inventory = $reportsModel->getInventoryName($email);
     $exchange = $reportsModel->getExchangeName($email);
-    $adSize = $reportsModel->getAdSize($campaign);
+    $adSize = $reportsModel->getAdSize($campaign, $email);
     return $this->respond([$creative, $inventory, $exchange, $adSize], 200);
   }
 
