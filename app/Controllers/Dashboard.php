@@ -19,8 +19,8 @@ class Dashboard extends ResourceController
   {
     $reportsModel = new Reporting_model();
 
-    $email = $this->request->getVar('email');
-    $dashboard = $reportsModel->getDashboardData($email);
+    $account_id = $this->request->getVar('account_id');
+    $dashboard = $reportsModel->getDashboardData($account_id);
     return $this->respond($dashboard, 200);
   }
 

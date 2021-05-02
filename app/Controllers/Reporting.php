@@ -21,13 +21,12 @@ class Reporting extends ResourceController
   {
     $reportsModel = new Reporting_model();
 
-    $email = $this->request->getVar('email');
+    $account_id = $this->request->getVar('account_id');
     $campaign = $this->request->getVar('campaign');
-
-    $creative = $reportsModel->getCreativeName($email);
-    $inventory = $reportsModel->getInventoryName($email);
-    $exchange = $reportsModel->getExchangeName($email);
-    $adSize = $reportsModel->getAdSize($campaign, $email);
+    $creative = $reportsModel->getCreativeName($account_id, $campaign);
+    $inventory = $reportsModel->getInventoryName($account_id, $campaign);
+    $exchange = $reportsModel->getExchangeName($account_id);
+    $adSize = $reportsModel->getAdSize($campaign, $account_id);
     return $this->respond([$creative, $inventory, $exchange, $adSize], 200);
   }
 
@@ -101,10 +100,10 @@ class Reporting extends ResourceController
     $creative = $reportModel->getCreativeName($campaign, $email);
     $campaignInfo = $reportModel->getCampaignInformation($campaign, $email);
     $exchange = $reportModel->getExchangeName($campaign, $email);
-    $adSize = $reportModel->getAdSize($campaign);
+    // $adSize = $reportModel->getAdSize($campaign);
     $dailyDelivery = $dailyDeliveryModel->getUserData($campaign, $email);
-    $data = [$creative, $inventory, $campaignInfo, $exchange, $adSize, $dailyDelivery];
-    return $this->setResponseFormat('json')->respond($data, 200);
+    // $data = [$creative, $inventory, $campaignInfo, $exchange, $adSize, $dailyDelivery];
+    // return $this->setResponseFormat('json')->respond($data, 200);
   }
 
   private function connectAPI($url, $offset=1, $limit=500, $credentialAPI, $retryConnect=2)
