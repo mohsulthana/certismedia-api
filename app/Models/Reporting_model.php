@@ -5,12 +5,106 @@ namespace App\Models;
 use CodeIgniter\Model;
 
 class Reporting_model extends Model {
-  protected $table = "report_csv";
-  // protected $allowedFields = ['email', 'campaign_id', 'creative_id', 'creative_name', 'creative_size', 'inventory_id', 'inventory_name', 'exchange_name', 'impressions', 'views', 'completed_views', 'clicks', 'ctr', 'date_time'];
+  protected $table = "akun561";
+  protected $allowedFields = ['campaign_id','campaign_name', 'creative_id', 'creative_name', 'creative_size', 'inventory_id', 'inventory_name', 'exchange_name', 'impressions', 'views', 'completed_views', 'clicks', 'ctr', 'date_time'];
+  
+  public function getCampaignNameById($table, $condition=null, $field=null) {
+        
+    $query = 'SELECT TOP 1 campaign_id,campaign_name FROM '.$table;
+    
+    if ($condition != null)
+        $query .= ' WHERE '.$condition .'GROUP BY campaign_id';
+    
+    return $this->db->query($query)->getResultArray();
+  }
+  
+  public function getCampaign($table) {
+    $field = 'campaign_id,campaign_name';
+    $query = 'SELECT '.$field.' FROM '.$table.' GROUP BY campaign_id';
+    return $this->db->query($query)->getResultArray();
+  }
+  
+  public function getDataByCampaignId($table, $condition=null, $field=null) {
+    if ($field == null)
+        $field = 'campaign_id,campaign_name';
+        
+    $query = 'SELECT '.$field.',sum(`impressions`) as impressions,sum(`clicks`) as clicks,sum(`views`) as views,sum(`completed_views`) as completed_views,sum(`ctr`) as ctr,`date_time` FROM (SELECT '.$field.',`impressions`,`clicks`,`views`,`completed_views`,`ctr`,`date_time` FROM '.$table;
+    if ($condition != null)
+        $query .= ' WHERE '.$condition;
+    $query .= ' GROUP BY `campaign_id`,`date_time`,`impressions`,`clicks`,`views`,`completed_views`,`ctr`) t1 GROUP BY t1.campaign_id,t1.date_time ORDER BY date_time';
+    
+    return $this->db->query($query)->getResultArray();
+  }
+  
+  public function getDataDashboard($table, $condition=null, $field=null) {
+    if ($field == null)
+        $field = 'campaign_id,campaign_name';
+        
+    $query = 'SELECT '.$field.',sum(`impressions`) as impressions,sum(`clicks`) as clicks,sum(`views`) as views,sum(`completed_views`) as completed_views,sum(`ctr`) as ctr FROM (SELECT '.$field.',`impressions`,`clicks`,`views`,`completed_views`,`ctr`,`date_time` FROM '.$table;
+    if ($condition != null)
+        $query .= ' WHERE '.$condition;
+    $query .= ' GROUP BY `campaign_id`,`date_time`,`impressions`,`clicks`,`views`,`completed_views`,`ctr`) t1 GROUP BY t1.campaign_id ORDER BY date_time';
+    
+    return $this->db->query($query)->getResultArray();
+  }
+  
+  public function getDataDaily($table, $campaign_id, $condition=null) {
+    $query = 'SELECT date_time,sum(`impressions`) as impressions,sum(`clicks`) as clicks,sum(`views`) as views,sum(`completed_views`) as completed_views,sum(`ctr`) as ctr FROM '.$table;
+    $query .= ' WHERE campaign_id='.$campaign_id;
+    if ($condition != null)
+        $query .= ' AND '.$condition;
+    $query .= ' GROUP BY `date_time`';
+    
+    return $this->db->query($query)->getResultArray();
+  }
+  
+  public function getDataByCreativeId($table, $campaign_id) {
+    $field = 'creative_id,creative_name';
+        
+    $query = 'SELECT '.$field.',sum(`impressions`) as impressions,sum(`clicks`) as clicks,sum(`views`) as views,sum(`completed_views`) as completed_views,sum(`ctr`) as ctr FROM (SELECT '.$field.',`impressions`,`clicks`,`views`,`completed_views`,`ctr`,`date_time` FROM '.$table;
+    $query .= ' WHERE campaign_id='.$campaign_id;
+    $query .= ' GROUP BY `creative_id`,`creative_name`,`date_time`,`impressions`,`clicks`,`views`,`completed_views`,`ctr`) t1 GROUP BY t1.creative_id ORDER BY date_time';
+    
+    return $this->db->query($query)->getResultArray();
+  }
+  
+  public function getDataByInventoryId($table, $campaign_id) {
+    $field = 'inventory_id,inventory_name';
+        
+    $query = 'SELECT '.$field.',sum(`impressions`) as impressions,sum(`clicks`) as clicks,sum(`views`) as views,sum(`completed_views`) as completed_views,sum(`ctr`) as ctr FROM (SELECT '.$field.',`impressions`,`clicks`,`views`,`completed_views`,`ctr`,`date_time` FROM '.$table;
+    $query .= ' WHERE campaign_id='.$campaign_id;
+    $query .= ' GROUP BY `inventory_id`,`inventory_name`,`date_time`,`impressions`,`clicks`,`views`,`completed_views`,`ctr`) t1 GROUP BY t1.inventory_id ORDER BY date_time';
+    
+    return $this->db->query($query)->getResultArray();
+  }
+
+  
+  public function getDataAdSize($table, $campaign_id, $condition=null) {
+    $field = 'creative_size';
+    $query = 'SELECT '.$field.',sum(`impressions`) as impressions FROM '.$table;
+    $query .= ' WHERE campaign_id='.$campaign_id;
+    if ($condition != null)
+        $query .= ' AND '.$condition;
+    $query .= ' GROUP BY `creative_size`';
+    
+    return $this->db->query($query)->getResultArray();
+  }
+  
+  public function getDataExchange($table, $campaign_id, $condition=null) {
+    $field = 'exchange_name';
+    $query = 'SELECT '.$field.',sum(`impressions`) as impressions FROM '.$table;
+    $query .= ' WHERE campaign_id='.$campaign_id;
+    if ($condition != null)
+        $query .= ' AND '.$condition;
+    $query .= ' GROUP BY `exchange_name`';
+    
+    return $this->db->query($query)->getResultArray();
+  }
 
   public function getDashboardData($account_id)
   {
-    $sql = 'SELECT `campaign_name`, `campaign_id`,`campaign_name`,sum(`impressions`) as impression,sum(`clicks`) as click,SUM(`views`) as view, SUM(`completed_views`) as completed_view,  SUM(`ctr`) as ctr,`date_time` FROM (SELECT `campaign_id`,`campaign_name`,`impressions`,`clicks`,`views`,`completed_views`,`ctr`,`date_time`,`account_id` FROM `report_csv` WHERE `date_time` GROUP BY campaign_id,date_time,impressions,clicks,views,completed_views,ctr) t1 WHERE t1.account_id=? GROUP BY t1.campaign_id';
+      print_r($account_id);
+    $sql = 'SELECT `campaign_name`, `campaign_id`,`campaign_name`,sum(`impressions`) as impression,sum(`clicks`) as click,SUM(`views`) as view, SUM(`completed_views`) as completed_view,  SUM(`ctr`) as ctr,`date_time` FROM (SELECT `campaign_id`,`campaign_name`,`impressions`,`clicks`,`views`,`completed_views`,`ctr`,`date_time` FROM `report_csv` WHERE `date_time` GROUP BY campaign_id,date_time,impressions,clicks,views,completed_views,ctr) t1 WHERE t1.account_id=? GROUP BY t1.campaign_id';
     //$sql = 'SELECT `campaign_name`, `campaign_id`, SUM(`impressions`) as impression, SUM(`clicks`) as click, SUM(`views`) as view, SUM(`completed_views`) as completed_view,  SUM(`ctr`) as ctr FROM `report_csv` WHERE `account_id`=? GROUP BY `campaign_id`';
     $result = $this->db->query($sql, $account_id);
     return $result->getResultArray();
@@ -26,7 +120,7 @@ class Reporting_model extends Model {
 
   public function getCreativeName($account_id, $campaign)
   {
-    $sql = 'SELECT `creative_name`, `creative_id`, `campaign_id`,sum(`impressions`) as impression,sum(`clicks`) as click,SUM(`views`) as view, SUM(`completed_views`) as completed_view,  SUM(`ctr`) as ctr,`date_time` FROM (SELECT `creative_name`, `creative_id`, `campaign_id`,`impressions`,`clicks`,`views`,`completed_views`,`ctr`,`date_time`,`account_id` FROM `report_csv` WHERE `date_time` GROUP BY campaign_id,date_time,impressions,clicks,views,completed_views,ctr) t1 WHERE t1.account_id=? AND t1.campaign_id=? GROUP BY t1.creative_id';
+    $sql = 'SELECT `creative_name`, `creative_id`, `campaign_id`,`campaign_name`,sum(`impressions`) as impression,sum(`clicks`) as click,SUM(`views`) as view, SUM(`completed_views`) as completed_view,  SUM(`ctr`) as ctr,`date_time` FROM (SELECT `creative_name`, `creative_id`, `campaign_id`,`campaign_name`,`impressions`,`clicks`,`views`,`completed_views`,`ctr`,`date_time` FROM `report_csv` WHERE `date_time` GROUP BY campaign_id,date_time,impressions,clicks,views,completed_views,ctr) t1 WHERE t1.account_id=? AND t1.campaign_id=? GROUP BY t1.creative_id';
     // $sql = 'SELECT SUM(`impressions`) as impression, SUM(`clicks`) as click, SUM(`views`) as view, SUM(`completed_views`) as completed_view,  SUM(`ctr`) as ctr FROM `report_csv` WHERE `account_id`=? GROUP BY `creative_id`';
     $result = $this->db->query($sql, [$account_id, $campaign]);
     return $result->getResultArray();
@@ -34,16 +128,16 @@ class Reporting_model extends Model {
 
   public function getInventoryName($account_id, $campaign)
   {
-    $sql = 'SELECT `inventory_name`, `inventory_id`, `campaign_id`,sum(`impressions`) as impression,sum(`clicks`) as click,SUM(`views`) as view, SUM(`completed_views`) as completed_view,  SUM(`ctr`) as ctr,`date_time` FROM (SELECT `inventory_name`, `inventory_id`, `campaign_id`,`impressions`,`clicks`,`views`,`completed_views`,`ctr`,`date_time`,`account_id` FROM `report_csv` WHERE `date_time` GROUP BY campaign_id,date_time,impressions,clicks,views,completed_views,ctr) t1 WHERE t1.account_id=? AND t1.campaign_id=? GROUP BY t1.inventory_id';
-    // $sql = 'SELECT SUM(`impressions`) as impression, SUM(`clicks`) as click, SUM(`views`) as view, SUM(`completed_views`) as completed_view,  SUM(`ctr`) as ctr FROM `report_csv` GROUP BY `inventory_id`';
-    $result = $this->db->query($sql, [$account_id, $campaign]);
+    $sql = 'SELECT `inventory_name`, `inventory_id`, `campaign_id`,`campaign_name`,sum(`impressions`) as impression,sum(`clicks`) as click,SUM(`views`) as view, SUM(`completed_views`) as completed_view,  SUM(`ctr`) as ctr,`date_time` FROM (SELECT `inventory_name`, `inventory_id`, `campaign_id`,`campaign_name`,`impressions`,`clicks`,`views`,`completed_views`,`ctr`,`date_time` FROM `report_csv` WHERE `date_time` GROUP BY campaign_id,date_time,impressions,clicks,views,completed_views,ctr) t1 WHERE t1.account_id=? AND t1.campaign_id=? GROUP BY t1.inventory_id';
+     // $sql = 'SELECT `inventory_name`, SUM(`impressions`) as impression, SUM(`clicks`) as click, SUM(`views`) as view, SUM(`completed_views`) as completed_view,  SUM(`ctr`) as ctr FROM `report_csv` WHERE `account_id`=? GROUP BY `inventory_id`';
+    $result = $this->db->query($sql, $account_id);
     return $result->getResultArray();
   }
 
   public function getExchangeName($account_id)
   {
     // $sql = 'SELECT `id`, `campaign_id`, `creative_name`, `creative_size`, `inventory_name`, `exchange_name`, SUM(`impressions`) as impression, SUM(`clicks`) AS click, SUM(`views`) AS view, SUM(`completed_views`) AS completed_view, `date_time`, SUM(`ctr`) AS ctr FROM `report_csv` WHERE `account_id`=?';
-    $sql = 'SELECT `exchange_name`, COUNT(`impressions`) as total FROM `report_csv` GROUP BY `exchange_name`';
+    $sql = 'SELECT `exchange_name`, COUNT(`impressions`) as total FROM `report_csv` WHERE `account_id`=? GROUP BY `exchange_name`';
     $result = $this->db->query($sql, $account_id);
     return $result->getResultArray();
   }

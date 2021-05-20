@@ -22,7 +22,6 @@ class Register extends ResourceController
     $email = $this->request->getVar('email');
     $username = $this->request->getVar('username');
     $name = $this->request->getVar('name');
-    $phone = $this->request->getVar('phone');
     $plain_password = $this->request->getVar('password');
     $password = password_hash($this->request->getVar('password'), PASSWORD_BCRYPT);
 
@@ -39,18 +38,22 @@ class Register extends ResourceController
         'email' => $email,
         'password' => $password,
         'API' => base64_encode($email.':'.$plain_password),
-        'phone' => $phone
       ];
       $create = $user->insert($data);
-
+      
+      //create table 
+      $user->createTable($username.$create);
+      $cmd = '/usr/local/bin/php /home4/fykfaumy/public_html/api/public/index.php Reporting CreateReportingAsync "'.$create.'" > /dev/null &' ;
+      shell_exec($cmd);
+      $cmd = '/usr/local/bin/php /home4/fykfaumy/public_html/api/public/index.php Reporting CreateReportingDailyAsync "'.$create.'" > /dev/null &' ;
+      shell_exec($cmd);
+      
       $response = [
         'message' => "User registered successfully",
         'id' => $create
       ];
 
-      shell_exec('/usr/local/bin/php /home4/fykfaumy/public_html/api/public/index.php Reporting FetchFromAPI "'.$create.'" > /dev/null &');
-      shell_exec('/usr/local/bin/php /home4/fykfaumy/public_html/api/public/index.php Reporting fetchDailyDelivery > /dev/null &');
-      shell_exec('/usr/local/bin/php /home4/fykfaumy/public_html/api/public/index.php Dashboard FetchFromAPI "'.$create.'" > /dev/null &');
+      
       return $this->respondCreated($response);
     }
   }

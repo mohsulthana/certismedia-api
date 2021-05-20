@@ -35,13 +35,14 @@ $routes->setAutoRoute(true);
 $routes->get('/', 'Home::index');
 $routes->post('/login', 'Authentication::login');
 $routes->post('/signup', 'Register::signup');
-$routes->post('Reporting/HandleReport/(:any)', 'Reporting::HandleReport/$1');
+$routes->options('(:any)', 'Home::options'); //one options method for all routes
 $routes->resource('dashboard');
 $routes->resource('reporting');
 
 $routes->get('fetch-report/(:any)', 'Reporting::fetchFromAPI/$1');
 $routes->get('fetch-dashboard/(:any)', 'Dashboard::fetchFromAPI/$1');
 $routes->get('fetch-daily-delivery', 'Reporting::fetchDailyDelivery');
+$routes->post('create-report/(:any)', 'Reporting::CreateReportingAsync/$1');
 
 /*
  * --------------------------------------------------------------------
