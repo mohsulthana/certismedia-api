@@ -38,7 +38,6 @@ class Authentication extends ResourceController
           'email' => $isExist['email'],
           'username' => $isExist['username'],
           'name' => $isExist['name'],
-          'status'  => $isExist['status'],
           'state' => "success",
           'logged_in' => true
         ];

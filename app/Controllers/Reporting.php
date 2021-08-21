@@ -17,55 +17,86 @@ class Reporting extends ResourceController
   protected $format = 'json';
   protected $modelName = 'App\Models\Reporting_model';
 
-  public function index()
+    //api table dashboard
+  public function dashboard($table)
   {
-    $request = \Config\Services::request();
-    $auth = $request->headers();
-    return $this->setResponseFormat('json')->respond($this->model->findAll(), 200);
+    helper('api');
+    $model = new Reporting_model();
+    $email = 'cm1032@certismedia.com';
+    $result = $model->getDataDashboard($table, $email);
+    return $this->respond($result, 200);
   }
-
-  public function getCampaignInformation($campaign, $id)
+  
+  // get campaign name only
+  public function campaign_name($table, $campaign_id)
   {
-    $email = $this->request->getGet('email');
-    $reportModel = new Reporting_model();
-    $dashboardModel = new Dashboard_model();
-    $dailyDeliveryModel = new Daily_delivery();
-    $inventory = $reportModel->getInventoryName($campaign, $email);
-    $creative = $reportModel->getCreativeName($campaign, $email);
-    $campaignInfo = $reportModel->getCampaignInformation($campaign, $email);
-    $exchange = $reportModel->getExchangeName($campaign, $email);
-    $adSize = $reportModel->getAdSize($campaign);
-    $dailyDelivery = $dailyDeliveryModel->getUserData($campaign, $email);
-    $data = [$creative, $inventory, $campaignInfo, $exchange, $adSize, $dailyDelivery];
-    return $this->setResponseFormat('json')->respond($data, 200);
+      helper('api');
+    $model = new Reporting_model();
+    $result = $model->getCampaignNameById($table, $campaign_id);
+    return $this->respond($result, 200);
   }
-
-  private function connectAPI($url, $offset=1, $limit=500, $credentialAPI, $retryConnect=2)
+  
+  public function get_campaign($table)
   {
-    if($retryConnect <= 0) return null;
-
-    $client = \Config\Services::curlrequest();
-    $response = $client->request('GET', $url, [
-      'headers' => [
-        'Accept'     => 'application/json',
-        'Authorization' => 'Basic '.$credentialAPI
-      ],
-      'connect_timeout' => 0,
-      'http_errors' => false
-    ]);
-    if($response->getStatusCode() >= 400) {
-      //retry connect
-      $response = $this->connectAPI($url, $offset, $limit, $credentialAPI, $retryConnect-1);
-    }
-    return $response;
+    helper('api');
+    $model = new Reporting_model();
+    $result = $model->getCampaign($table);
+    return $this->respond($result, 200);
   }
-
-  public function fetchFromAPI($id_user = null)
+  
+    //api table daily
+  public function daily($table, $campaign_id)
   {
+    helper('api');
+    $model = new Reporting_model();
+    $result = $model->getDataDaily('daily_'.$table,$campaign_id);
+    return $this->respond($result, 200);
+  }
+  
+    //api table creative
+  public function creative($table,$campaign_id)
+  {
+    helper('api');
+    $model = new Reporting_model();
+    $result = $model->getDataByCreativeId($table, $campaign_id);
+    return $this->respond($result, 200);
+  }
+  
+    //api table inventory
+  public function inventory($table, $campaign_id)
+  {
+    helper('api');
+    $model = new Reporting_model();
+    $result = $model->getDataByInventoryId($table, $campaign_id);
+    return $this->respond($result, 200);
+  }
+  
+    //api chart adSize
+  public function adsize($table, $campaign_id)
+  {
+    helper('api');
+    $model = new Reporting_model();
+    $result = $model->getDataAdSize($table, $campaign_id);
+    return $this->respond($result, 200);
+  }
+  
+    //api chart exchange
+  public function exchange($table, $campaign_id)
+  {
+    helper('api');
+    $model = new Reporting_model();
+    $result = $model->getDataExchange($table, $campaign_id);
+    return $this->respond($result, 200);
+  }
+    
+
+
+  //fungsi untuk cronjob
+  public function CreateReportingAsync($id_user=null)
+  {
+    helper('api');
     $usersModel = new User_model();
-    $reportingModel = new Reporting_model();
-    $limit = 500;
-
+    
     if($id_user != null) {
       $users[0] = $usersModel->find($id_user);
       if($users[0] == null) {
@@ -75,62 +106,20 @@ class Reporting extends ResourceController
       $users = $usersModel->findAll();
     }
 
-    $day  = date('Y-m-d', strtotime("yesterday"));
-    $url = "https://reporting.smadex.com/api/v2/performance?dimensions=campaign_id,creative_id,creative_name,creative_size,inventory_id,inventory_name,exchange_name&metrics=impressions,clicks,winrate,views,completed_views&startdate=$day&granularity=day";
-
     foreach ($users as $user) {
-      for($offset=1; $offset<9999999; $offset++) {
-        $tmp_url = $url.'&offset='.$offset.'&limit='.$limit;
-
-        $response = $this->connectAPI($tmp_url, $offset, $limit, $user['API']);
-        if($response == null) {
-          //failed connect API
-          $usersModel->set(['statusReporting' => 3])->where('email', $user['email'])->update();
-          return 'failed connect API';
+        if(isset($user['API'])) {
+            $a = create_reporting($user['id'],$user['API']);
+            echo var_dump($a);      
         }
-
-        $data = json_decode($response->getBody());
-        if($data == null) {
-          //fetch selesai
-          if($user['statusReporting'] != 1) {
-            $usersModel->set(['statusReporting' => 1])->where('email', $user['email'])->update();
-          }
-          return 'success fetch';
-        }
-
-        //input data ke DB
-        $dataInput = [];
-        foreach ($data as $key => $value) {
-          $tmp = [
-            'email'       => $user['email'],
-            'campaign_id' => intval($value->campaign_id),
-            'creative_id' => intval($value->creative_id),
-            'creative_name' => $value->creative_name,
-            'creative_size' => $value->creative_size,
-            'inventory_id'  => intval($value->inventory_id),
-            'inventory_name'  => $value->inventory_name,
-            'exchange_name' => $value->exchange_name,
-            'impression' => floatval($value->impressions),
-            'view'  => intval($value->views),
-            'completed_view' => intval($value->completed_views),
-            'click' => floatval($value->clicks),
-            'win_rate'  => floatval($value->winrate),
-            'time'  => intval($value->time)
-          ];
-          array_push($dataInput, $tmp);
-        }
-        $reportingModel->insertBatch($dataInput);
-      }
     }
-    return 'success';
   }
-
-  public function fetchDailyDelivery($id_user = null)
+  
+  //fungsi untuk cronjob daily
+  public function CreateReportingDailyAsync($id_user=null)
   {
+    helper('api');
     $usersModel = new User_model();
-    $dailyDeliveryModel = new Reporting_model();
-    $limit = 500;
-
+    
     if($id_user != null) {
       $users[0] = $usersModel->find($id_user);
       if($users[0] == null) {
@@ -140,46 +129,125 @@ class Reporting extends ResourceController
       $users = $usersModel->findAll();
     }
 
-    $day  = date('Y-m-d', strtotime("yesterday"));
-    $url = "https://reporting.smadex.com/api/v2/performance?dimensions=campaign_id&metrics=impressions,clicks,winrate,views,completed_views&startdate=$day&granularity=day";
-
     foreach ($users as $user) {
-      for($offset=1; $offset<9999999; $offset++) {
-        $tmp_url = $url.'&offset='.$offset.'&limit='.$limit;
-
-        $response = $this->connectAPI($tmp_url, $offset, $limit, $user['API']);
-        if($response == null) {
-          //failed connect API
-          // $usersModel->set(['statusReporting' => 3])->where('email', $user['email'])->update();
-          return 'failed connect API';
+        if(isset($user['API'])) {
+            $a = create_reporting($user['id'],$user['API'],'day');
+            echo var_dump($a);      
         }
-
-        $data = json_decode($response->getBody());
-        if($data == null) {
-          //fetch selesai
-          // if($user['statusReporting'] != 1) {
-          //   $usersModel->set(['statusReporting' => 1])->where('email', $user['email'])->update();
-          // }
-          return 'success fetch';
-        }
-
-        //input data ke DB
-        $dataInput = [];
-        foreach ($data as $key => $value) {
-          $tmp = [
-            'campaign_id' => $value->campaign_id,
-            'impression' => $value->impressions,
-            'click' => $value->clicks,
-            'view' => $value->views,
-            'completed_view' => $value->completed_views,
-            'win_rate'  => $value->winrate,
-            'time'  => $value->time
-          ];
-          array_push($dataInput, $tmp);
-        }
-        $dailyDeliveryModel->insertBatch($dataInput);
-      }
     }
-    return 'success';
   }
+
+  //fungsi handle callBack url from API
+  public function HandleReport($id_user,$daily=null)
+  {
+    $id = $this->request->getVar('id');
+    $downloadUrl = $this->request->getVar('downloadUrl');
+    $downloadUrl = base64_encode($downloadUrl);
+    $usersModel = new User_model();
+    $user = $usersModel->find($id_user);
+    if($user && $id && $downloadUrl) {
+        $table = '';
+      if($daily)
+        $table = 'daily_';
+      $table .= $user['username'].$user['id'];
+      $cmd = '/usr/local/bin/php /home4/fykfaumy/public_html/api/public/index.php Reporting GetReportingAsync "'.$table.'" "'.$id.'" "'.$downloadUrl.'" > /dev/null &' ;
+      shell_exec($cmd);
+      
+    }
+  }
+
+  //fungsi untuk get data report dari API dan insert data ke DB
+  public function GetReportingAsync($table=null, $id_report=null, $downloadUrl)
+  {
+    helper('api');
+    $usersModel = new User_model();
+    $downloadUrl = base64_decode($downloadUrl);
+    $data = [
+            'status' => 'download file url '.$table,
+            'message' => $id_report.' url:'.$downloadUrl
+        ];
+        $logs_model = new \App\Models\Logs_cronjob_model();
+        $logs_model->insert($data);
+    if($id_report != null) {
+      $data = [
+            'status' => 'download file url '.$table,
+            'message' => $downloadUrl
+        ];
+        $logs_model = new \App\Models\Logs_cronjob_model();
+        $logs_model->insert($data);
+      
+        $destination_path = $id_report.'.csv';
+        $daily = explode("_", $table);
+        download_file($downloadUrl, $destination_path);
+        if($daily[0] == 'daily')
+            importCSV($destination_path, $table, false);
+        else 
+            importCSV($destination_path, $table);
+        
+        // $cmd = 'rm '.$destination_path;
+        // shell_exec($cmd);
+    }
+  }
+  
+  //cronjob update token user
+  public function refreshToken($id_user=null)
+  {
+      helper('api');
+      $usersModel = new User_model();
+      $users = $usersModel->find($id_user);
+      foreach($users as $user) {
+          getTokenAPI($user['API'], true);
+      }
+      
+  }
+  
+//   public function data($table)
+//   {
+//       helper('api');
+//       $model = new Reporting_model();
+//       dum($model->getDataDashboard($table));
+//       $campaign_id = 29402;
+//       dum($model->getDataExchange($table, $campaign_id));
+//       return dum($model->getDataByCampaignId($table, 'date_time="2021-05-06"'));
+//   }
+
+  public function baca($file)
+  {
+      helper('api');
+      test_importCSV($file,'daily_test821', false);
+  }
+  
+//   public function cek()
+//   {
+    //   echo date('Y-m-d');
+    //   echo '<br>';
+    //   echo date_default_timezone_get();
+    //   date_default_timezone_set('UTC');
+    //   echo '<br>';
+    //   echo date_default_timezone_get();
+    // $cmd = 'ls';
+    // $cmd = 'rm e8fd46f4-8598-4717-87de-a14a9cf40ec0.csv';
+    // echo var_dump(shell_exec($cmd));
+    
+//   }
+  
+//   public function tulis($url, $desti)
+//   {
+//       helper('api');
+//       download_file($url, $desti);
+//   }
+  
+//   public function cobadb()
+//   {
+//     //   $m = new User_model();
+//     //   return var_dump($m->createTable('daily_akun322'));
+//     $data = [
+//             'status' => 'download file url ',
+//             'message' => ' url:'
+//         ];
+//         $logs_model = new \App\Models\Logs_cronjob_model();
+//         $logs_model->insert($data);
+//   }
+
+ 
 }
